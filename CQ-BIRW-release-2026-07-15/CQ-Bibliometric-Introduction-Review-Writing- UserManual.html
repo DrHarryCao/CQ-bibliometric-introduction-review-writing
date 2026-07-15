@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="CQ Bibliometric · Introduction · Review · Writing bilingual user manual">
+  <title>CQ Bibliometric · Introduction · Review · Writing — User Manual</title>
+  <style>
+    :root{--ink:#17231d;--muted:#5f6d65;--paper:#f7f8f4;--card:#fff;--line:#dbe3dc;--green:#175c43;--green2:#24805f;--gold:#c79342;--code:#10221a}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif}
+    a{color:var(--green);text-decoration-thickness:1px;text-underline-offset:3px}.layout{display:grid;grid-template-columns:285px minmax(0,1fr);min-height:100vh}
+    aside{position:sticky;top:0;height:100vh;overflow:auto;background:#0f2d22;color:#eaf5ef;padding:26px 20px}aside h2{font-size:17px;margin:0 0 8px}aside p{font-size:12px;color:#b9d0c3;margin:0 0 18px}nav a{display:block;color:#d8e9df;text-decoration:none;padding:6px 8px;border-radius:7px;font-size:13px}nav a:hover{background:#1d4938;color:#fff}
+    main{max-width:1120px;width:100%;padding:38px 54px 70px}.hero{padding:38px;border-radius:22px;background:linear-gradient(135deg,#123d2d,#207554);color:white;box-shadow:0 18px 40px #15372925}.hero h1{font-size:clamp(28px,4vw,48px);line-height:1.12;margin:0 0 14px}.hero p{max-width:850px;margin:8px 0;color:#e4f0ea}.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.badge{border:1px solid #ffffff48;border-radius:999px;padding:5px 10px;font-size:12px;background:#ffffff12}
+    .toolbar{display:flex;gap:8px;position:sticky;top:12px;z-index:4;justify-content:flex-end;margin:16px 0}.toolbar button,.copy{border:1px solid var(--line);background:#fff;color:var(--green);border-radius:9px;padding:8px 12px;cursor:pointer;font-weight:650}.toolbar button.active{background:var(--green);color:#fff}.copy{position:absolute;right:8px;top:8px;font-size:12px;padding:5px 8px}
+    section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:27px 30px;margin:18px 0;box-shadow:0 8px 24px #173c2510}h2{font-size:25px;line-height:1.3;margin:0 0 14px;color:#123d2d}h3{font-size:18px;color:#1d5e46;margin-top:24px}h4{margin-bottom:5px}.lead{font-size:18px}.note,.warn{border-left:4px solid var(--green2);background:#eef7f2;padding:12px 15px;border-radius:7px;margin:14px 0}.warn{border-color:var(--gold);background:#fff7e9}
+    pre{position:relative;background:var(--code);color:#e7f6ed;border-radius:12px;padding:18px;overflow:auto;font:13px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}p code,li code,td code{background:#eef1ed;border-radius:5px;padding:2px 5px;color:#174c39}table{width:100%;border-collapse:collapse;display:block;overflow:auto}th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}th{background:#edf4ef}.flow{white-space:pre-wrap;background:#eef5f0;padding:16px;border-radius:12px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace}.footer{text-align:center;color:var(--muted);padding:30px}
+    .demo-intro{margin:16px 0 22px}.demo-intro ul{margin-bottom:0}.demo-warning{border-left:4px solid var(--gold);background:#fff7e9;padding:13px 16px;border-radius:8px;margin:14px 0}.demo-shell{border:1px solid #cfd9d1;border-radius:13px;background:#f3f6f3;margin:18px 0;overflow:hidden}.demo-shell>summary{cursor:pointer;padding:15px 18px;background:#e9f1eb;color:#173e2e;font-weight:750;list-style-position:inside}.demo-shell[open]>summary{border-bottom:1px solid #cfd9d1}.demo-meta{padding:14px 20px;background:#fafcf9;border-bottom:1px solid #dfe6df;color:#536159;font-size:13px}.demo-paper{max-width:900px;margin:20px auto;background:#fff;padding:28mm 25mm;box-shadow:0 2px 14px #00000013;font-family:"Times New Roman","Songti SC",SimSun,serif;line-height:1.75}.demo-paper h1{font-size:24px;text-align:center;color:#20242a}.demo-paper h2{font-size:20px;color:#20242a;border-bottom:1px solid #ccd5df;padding-bottom:6px;margin-top:1.5em}.demo-paper h3{font-size:17px;color:#20242a}.demo-paper p{text-align:justify;text-indent:2em;margin:.55em 0}.demo-paper blockquote{background:#f5f7f9;border-left:4px solid #6e8daa;padding:10px 14px}.demo-reference-list p{text-indent:0;padding-left:2em;text-indent:-2em;word-break:break-word}
+    [data-lang="en"]{display:none}body.en [data-lang="zh"]{display:none}body.en [data-lang="en"]{display:block}body.en span[data-lang="en"],body.en a[data-lang="en"]{display:inline}span[data-lang="en"],a[data-lang="en"]{display:none}
+    @media(max-width:900px){.layout{display:block}aside{position:relative;height:auto}nav{columns:2}main{padding:22px 14px}.hero,section{padding:22px}.toolbar{top:5px}}
+    @media print{aside,.toolbar,.copy{display:none!important}.layout{display:block}main{max-width:none;padding:0}.hero{box-shadow:none;background:#fff;color:#000;border:1px solid #bbb}.hero p{color:#222}section{box-shadow:none;break-inside:avoid;border-color:#ccc}body{background:#fff}}
+  </style>
+</head>
+<body>
+<script id="cq-doc-facts" type="application/json">{"doc_version":"2026-07-15","skill_schema":12,"sections":["purpose","platform","installation","quickstart","acquisition","workflow","records","corpus","analysis","evidence","gaps","writing","delivery","commands","troubleshooting","integrity","demos"],"topic_model":"NMF","kmeans_role":"diagnostic-only","focus":"task-specific","embedding":"disabled-by-default","pregenerated_docx":false,"variants":["evidence-aware","publication"],"embedded_demos":["introduction-publication-draft","review-evidence-aware-draft"],"brand":"JWC💗XQ@Rednote drharry"}</script>
+<div class="layout">
+  <aside>
+    <h2>CQ BIRW</h2><p>JWC💗XQ@Rednote drharry</p>
+    <nav>
+      <a href="#purpose">01 · <span data-lang="zh">技能定位</span><span data-lang="en">Purpose</span></a>
+      <a href="#platform">02 · <span data-lang="zh">支持环境</span><span data-lang="en">Platform</span></a>
+      <a href="#installation">03 · <span data-lang="zh">安装</span><span data-lang="en">Installation</span></a>
+      <a href="#quickstart">04 · <span data-lang="zh">快速开始</span><span data-lang="en">Quick start</span></a>
+      <a href="#acquisition">05 · <span data-lang="zh">检索与凭据</span><span data-lang="en">Acquisition</span></a>
+      <a href="#workflow">06 · <span data-lang="zh">工作流</span><span data-lang="en">Workflow</span></a>
+      <a href="#records">07 · <span data-lang="zh">题录与全文</span><span data-lang="en">Records</span></a>
+      <a href="#corpus">08 · <span data-lang="zh">语料策略</span><span data-lang="en">Corpus</span></a>
+      <a href="#analysis">09 · <span data-lang="zh">科学分析</span><span data-lang="en">Analysis</span></a>
+      <a href="#evidence">10 · <span data-lang="zh">证据与语义</span><span data-lang="en">Evidence</span></a>
+      <a href="#gaps">11 · <span data-lang="zh">缺口与理论</span><span data-lang="en">Gaps & theory</span></a>
+      <a href="#writing">12 · <span data-lang="zh">写作顺序</span><span data-lang="en">Writing</span></a>
+      <a href="#delivery">13 · <span data-lang="zh">交付</span><span data-lang="en">Delivery</span></a>
+      <a href="#commands">14 · <span data-lang="zh">命令</span><span data-lang="en">Commands</span></a>
+      <a href="#troubleshooting">15 · <span data-lang="zh">故障排查</span><span data-lang="en">Troubleshooting</span></a>
+      <a href="#integrity">16 · <span data-lang="zh">诚信边界</span><span data-lang="en">Integrity</span></a>
+      <a href="#demos">17 · <span data-lang="zh">完整成果示例</span><span data-lang="en">Complete demos</span></a>
+    </nav>
+  </aside>
+  <main>
+    <header class="hero">
+      <h1>CQ Bibliometric · Introduction · Review · Writing</h1>
+      <p data-lang="zh" class="lead">从研究主题、题录或合法全文出发，完成可追溯文献计量、系统综述与SSCI漏斗型绪论。</p>
+      <p data-lang="en" class="lead">Traceable bibliometrics, systematic reviews, and funnel-shaped SSCI introductions from a topic, records, or lawfully available full text.</p>
+      <div class="badges"><span class="badge">Codex + Claude</span><span class="badge">macOS · Windows · Linux</span><span class="badge">API or API-free</span><span class="badge">NMF + semantic evidence</span><span class="badge">HTML + RIS</span></div>
+    </header>
+    <div class="toolbar"><button id="zhBtn" class="active">中文</button><button id="enBtn">English</button><button onclick="window.print()">打印 / Print</button></div>
+
+    <section id="purpose">
+      <div data-lang="zh"><h2>1. 技能定位</h2><p>本技能兼容Codex与Claude Code。本地Python负责确定性的检索、规范化、计量、索引和审计；宿主模型负责检索词推理、逐篇语义抽取、理论比较、证据综合和学术写作。</p><p>核心能力包括双语检索计划与WoS式、OpenAlex或无API本地导入、多源题录与全文处理、通用聚焦、NMF及条件式高级分析、Tier A–D证据分层、Research Gap与动态设计、非阻断理论库、综述/绪论双版本、离线HTML和RIS。</p><div class="note">证据先于写作：计量信号、理论库知识和LLM常识不能冒充当前任务的实证证据。</div></div>
+      <div data-lang="en"><h2>1. Purpose</h2><p>This Codex/Claude Code skill lets local Python handle deterministic retrieval, normalization, bibliometrics, indexing, and audits while the host model performs query reasoning, semantic extraction, theory comparison, synthesis, and scholarly writing.</p><p>It covers bilingual plans and WoS queries, OpenAlex or API-free ingestion, multi-source records/full text, task-specific focusing, NMF and gated advanced analysis, Tier A–D evidence, gap/design audits, a non-blocking theory library, dual manuscript variants, offline HTML, and RIS.</p><div class="note">Evidence comes before prose. Bibliometrics, theory-library knowledge, and model knowledge are not current-task empirical evidence.</div></div>
+    </section>
+
+    <section id="platform">
+      <div data-lang="zh"><h2>2. 正式支持环境</h2><table><tr><th>项目</th><th>范围</th></tr><tr><td>系统</td><td>macOS 13+；Windows 10/11；Ubuntu 22.04/24.04、Debian 12、Fedora当前稳定版</td></tr><tr><td>架构/Python</td><td>x64、ARM64、Intel/Apple Silicon；Python 3.10–3.13</td></tr><tr><td>Windows</td><td>PowerShell、CMD、Git Bash、WSL2</td></tr><tr><td>宿主</td><td>各平台官方提供的Codex与Claude Code CLI、桌面或IDE界面</td></tr></table><p>Alpine/musl、Windows 8.1、WSL1和Python 3.9以下仅尽力兼容。OCR、LibreOffice、GUI、凭据库、字体或浏览器缺失只使相关模块变为<code>skipped-unavailable</code>。</p></div>
+      <div data-lang="en"><h2>2. Supported environment</h2><table><tr><th>Item</th><th>Range</th></tr><tr><td>OS</td><td>macOS 13+; Windows 10/11; Ubuntu 22.04/24.04, Debian 12, current Fedora</td></tr><tr><td>Architecture/Python</td><td>x64, ARM64, Intel/Apple Silicon; Python 3.10–3.13</td></tr><tr><td>Windows</td><td>PowerShell, CMD, Git Bash, WSL2</td></tr><tr><td>Hosts</td><td>Official Codex and Claude Code CLI, desktop, or IDE surfaces available on that platform</td></tr></table><p>Alpine/musl, Windows 8.1, WSL1, and older Python are best effort. Missing optional tools downgrade only the affected module.</p></div>
+    </section>
+
+    <section id="installation">
+      <div data-lang="zh"><h2>3. 安装</h2><p>解压发布包，在顶层目录运行：</p></div><div data-lang="en"><h2>3. Installation</h2><p>From the extracted release root, run:</p></div>
+      <pre><button class="copy">复制 / Copy</button><code>python -m pip install -r cq-bibliometric-introduction-review-writing/scripts/requirements-core.txt
+python cq-bibliometric-introduction-review-writing/scripts/install_skill.py install --host both --scope user --mode auto
+python cq-bibliometric-introduction-review-writing/scripts/review_pipeline.py doctor --json</code></pre>
+      <div data-lang="zh"><p>安装器按符号链接、Windows junction、受管副本自动降级。使用<code>status|repair|uninstall</code>维护；项目安装将<code>--scope user</code>改为<code>project</code>。Codex入口为<code>$cq-bibliometric-introduction-review-writing</code>，Claude Code入口为<code>/cq-bibliometric-introduction-review-writing</code>。</p><p>OCR与定量综合分别使用<code>requirements-ocr.txt</code>和<code>requirements-meta.txt</code>。基础安装无embedding、PyTorch和模型下载。</p></div>
+      <div data-lang="en"><p>The installer falls back from symlink to Windows junction to managed copy. Use <code>status|repair|uninstall</code> for maintenance and <code>--scope project</code> for project installation. Invoke the dollar-form in Codex and the slash-form in Claude Code.</p><p>OCR and quantitative synthesis have separate optional requirement files. The base install has no embeddings, PyTorch, or model downloads.</p></div>
+    </section>
+
+    <section id="quickstart">
+      <div data-lang="zh"><h2>4. 五分钟快速开始</h2><pre><button class="copy">复制</button><code>使用 $cq-bibliometric-introduction-review-writing。
+我的研究主题是“……”。请建立独立任务目录，先生成并展示检索计划；不要在我确认前搜索。</code></pre><p>Claude Code使用斜杠入口。首次选择“API自动检索”或“仅生成检索策略”。真实检查点的典型回复为：<code>批准检索计划</code>、<code>全部语料</code>/<code>聚焦语料</code>、<code>确认聚焦语料</code>、缺口方向或<code>跳过</code>、理论支持模式、<code>确认提纲</code>、<code>确认综述</code>，以及独立的绪论方向/<code>跳过</code>/<code>不写绪论</code>。</p><p>已批准阶段内的分析、证据扩展、写作、引用补足、同步、验证与导出自动续跑。</p></div>
+      <div data-lang="en"><h2>4. Five-minute start</h2><pre><button class="copy">Copy</button><code>Use $cq-bibliometric-introduction-review-writing.
+My topic is “...”. Create a separate task and show the search plan first. Do not search before approval.</code></pre><p>Use the slash-form in Claude Code. Select API search or strategy-only. Genuine checkpoints cover search approval, corpus mode, focus confirmation, review-gap preference, theory mode, outline, review approval, and an independent introduction preference.</p><p>Approved deterministic and writing stages continue automatically to the next real decision.</p></div>
+    </section>
+
+    <section id="acquisition">
+      <div data-lang="zh"><h2>5. 获取模式与API凭据</h2><h3>API自动检索</h3><p>OpenAlex检索需要API key。不得把密钥写入聊天、参数、项目或日志。</p></div><div data-lang="en"><h2>5. Acquisition and credentials</h2><h3>API search</h3><p>OpenAlex search requires a key. Never put it in chat, arguments, project files, or logs.</p></div>
+      <pre><button class="copy">复制 / Copy</button><code>python cq-bibliometric-introduction-review-writing/scripts/review_pipeline.py credentials guide --open-browser
+python cq-bibliometric-introduction-review-writing/scripts/review_pipeline.py credentials setup --input auto
+python cq-bibliometric-introduction-review-writing/scripts/review_pipeline.py credentials status
+python cq-bibliometric-introduction-review-writing/scripts/review_pipeline.py credentials test
+python cq-bibliometric-introduction-review-writing/scripts/review_pipeline.py credentials update --name OPENALEX_API_KEY --input auto
+python cq-bibliometric-introduction-review-writing/scripts/review_pipeline.py credentials delete --name OPENALEX_API_KEY</code></pre>
+      <div data-lang="zh"><p>安全存储优先Keychain、Credential Manager或Secret Service/keyring；不可用时可用不回显终端输入完成当前命令。Crossref/Unpaywall邮箱不是key，Semantic Scholar key可选。额度和价格可能变化，大规模或付费全文须查看官方usage并另行确认成本。</p><h3>无API模式</h3><p>仍执行中文到学术英文的翻译和概念对齐，输出<code>search_plan.json/md</code>、三类WoS式、中文关键词组合、边界与种子召回建议；不弹凭据、不联网。Crossref补全另行确认。</p></div>
+      <div data-lang="en"><p>Storage prefers Keychain, Credential Manager, or Secret Service/keyring, with non-echoing terminal fallback. Crossref/Unpaywall emails are not keys; Semantic Scholar is optional. Check official quota/price pages before large or paid downloads.</p><h3>Strategy-only</h3><p>It still performs bilingual alignment and produces the plan, three WoS variants, Chinese terms, scope, and seed-recall advice, but makes no credential check or request. Crossref enrichment is separately opt-in.</p></div>
+    </section>
+
+    <section id="workflow">
+      <div data-lang="zh"><h2>6. 标准工作流与断点恢复</h2></div><div data-lang="en"><h2>6. Workflow and resume</h2></div>
+      <div class="flow">Topic → bilingual plan/WoS → approval → API or local ingest → dedup/coverage → all or focused corpus → full text/reference candidates → NMF/gated analysis → evidence/semantics → gap/theory/design → outline approval → review brief and audited sections → review HTML approval → independent introduction brief → introduction → evidence-aware/publication variants → citation/reference/RIS validation → HTML/RIS</div>
+      <div data-lang="zh"><p>任务位于技能外的<code>review-tasks/任务名</code>。manifest保存参数、版本、随机种子、输入哈希、来源时间和阶段状态。恢复时运行：</p></div><div data-lang="en"><p>Tasks live outside the skill. The manifest preserves parameters, versions, seeds, hashes, dates, and states. Resume with:</p></div>
+      <pre><button class="copy">复制 / Copy</button><code>python cq-bibliometric-introduction-review-writing/scripts/review_pipeline.py status --task "TASK"</code></pre>
+      <p data-lang="zh"><code>status</code>提供是否需要用户输入、检查点、可接受回复、下一命令和自动续跑状态。迁移不重写语料或草稿。</p><p data-lang="en"><code>status</code>reports user input, checkpoint, accepted replies, next command, and auto-continue state. Migration does not rewrite corpora or drafts.</p>
+    </section>
+
+    <section id="records">
+      <div data-lang="zh"><h2>7. 题录、全文与元数据</h2><p>支持RIS、ENW、BibTeX、NBIB、WoS tagged text、CSV、XLSX、JSONL、NET，以及合法PDF、DOCX、TXT、Markdown和递归目录。旧DOC仅在LibreOffice可用时转换。</p><p>统一记录保存稳定ID、作者机构、日期、摘要关键词、来源主题、各来源被引数、年度历史、参考文献和OA信息；各来源被引数绝不相加。相同DOI只有题名、年份和作者相容才合并，范围冲突标记<code>doi-scope-conflict</code>。</p><p>PDF页与DOCX段落保留锚点；OCR和解析失败进入质量报告。一跳扩展默认最多200条，确认后才纳入。缺失字段不推造，相关分析自动降级。</p></div>
+      <div data-lang="en"><h2>7. Records, full text, and metadata</h2><p>RIS, ENW, BibTeX, NBIB, WoS tagged text, CSV, XLSX, JSONL, NET, lawful PDF/DOCX/TXT/Markdown, and recursive directories are supported. Legacy DOC conversion is optional.</p><p>Source-specific citation counts remain separate. Shared DOI records merge only when title, year, and authorship agree; scope collisions become <code>doi-scope-conflict</code>. PDF pages and DOCX paragraphs retain anchors. One-hop expansion is capped at 200 by default and requires approval. Missing source fields are never invented.</p></div>
+    </section>
+
+    <section id="corpus">
+      <div data-lang="zh"><h2>8. 全量与通用聚焦语料</h2><p>全量模式零排除地分析全部去重记录，但不表示每篇都能支持正文。聚焦模式保留全量母任务，另建透明派生任务。</p><p>新任务没有任何领域硬编码。宿主为当前问题生成中英文核心概念、必要组合、相邻机制、排除项和低置信规则；脚本只执行已批准的<code>focus_plan</code>，分类为<code>core</code>、<code>theory-supplement</code>、<code>needs-review</code>和<code>excluded</code>。派生任务继承稳定状态，不复制密钥、临时错误或过期正文哈希。</p></div>
+      <div data-lang="en"><h2>8. All versus focused corpus</h2><p>All mode analyzes every deduplicated record with zero exclusions but does not make every record prose evidence. Focused mode preserves the master task and creates an auditable derivative.</p><p>No new task uses domain hard-coding. A current-task bilingual focus plan defines core, required, adjacent, excluded, and low-confidence rules; deterministic classes are <code>core</code>, <code>theory-supplement</code>, <code>needs-review</code>, and <code>excluded</code>.</p></div>
+    </section>
+
+    <section id="analysis">
+      <div data-lang="zh"><h2>9. 科学分析框架</h2><p><strong>NMF是唯一主题体系。</strong>主题数综合重构误差、c-NPMI、一致性、多样性、排他性、最小规模、分层重抽样及随机种子/预处理敏感性。KMeans仅作受门控的异质性诊断，不生成第二套主题。技能不使用LDA、BERTopic或HDBSCAN。</p><p>稳定NMF可支持限定性结构描述；已收敛但不稳定时可在警告下成为探索性写作骨架，须由宿主重新语义命名，不得写成稳定知识结构；未收敛或覆盖不足时改用研究问题和语义证据。</p><p>战略图、SNA/结构洞、突现/演化、citation age、knowledge flow和条件式元分析均按数据覆盖门控。中心性、象限、突现、高被引和知识流不能直接证明理论重要性或因果。</p></div>
+      <div data-lang="en"><h2>9. Scientific analysis</h2><p><strong>NMF is the only topic system.</strong> Selection uses reconstruction, c-NPMI, coherence, diversity, exclusivity, size, stratified resampling, and seed/preprocessing sensitivity. KMeans is diagnostic-only. LDA, BERTopic, and HDBSCAN are absent.</p><p>A converged but unstable NMF may be a warned exploratory scaffold after semantic renaming, never a stable field claim. Failed/low-coverage models yield to question- and evidence-led organization.</p><p>Strategic maps, networks/structural holes, bursts/evolution, citation age, knowledge flow, and meta-analysis are coverage-gated. Their metrics organize inquiry but do not prove importance or causality.</p></div>
+    </section>
+
+    <section id="evidence">
+      <div data-lang="zh"><h2>10. 证据层级、语义与Token</h2><table><tr><th>层级</th><th>用途</th></tr><tr><td>A</td><td>同行评审期刊实证；共识用综述/元分析；理论史用权威专著；主要会议型学科的正式全文会议</td></tr><tr><td>B</td><td>学位论文、一般会议全文、方法完整报告和补充章节</td></tr><tr><td>C</td><td>预印本、工作论文、早期或同行评审不明材料</td></tr><tr><td>D</td><td>撤稿、错误匹配、整期记录、来源不明或纯元数据，不支持正式正向论断</td></tr></table><p>语义适配先于层级。全文/摘要等级与出版层级分开；低层只在高层不足、独特情境、新兴现象或反例时回退，不能单独支持强概括。</p><p>无embedding语义流程先逐篇抽取，再复核矛盾和高影响不确定性。哈希缓存、代表性分层和章节局部dossier降低Token，但不降低引用、反例和全文优先要求。</p></div>
+      <div data-lang="en"><h2>10. Evidence, semantics, and tokens</h2><p>Claim fit comes before tier. Tier A is primary peer-reviewed/authoritative evidence; B is theses, ordinary proceedings, and method-complete reports; C is preprints and early/unconfirmed work; D is retracted, mismatched, editorial, unknown, or metadata-only material that cannot support positive claims.</p><p>Publication tier and full-text level remain separate. Lower tiers require a documented reason and cannot alone support strong generalizations. The no-embedding two-pass semantic workflow uses hashes, stratified candidates, and section-local dossiers to save tokens without weakening evidence rules.</p></div>
+    </section>
+
+    <section id="gaps">
+      <div data-lang="zh"><h2>11. Research Gap、理论与设计</h2><p>A级是解释性失效，B级是测量/识别/偏倚/精度/外部效度等推断问题，C级是国家、平台、样本、变量组合或方法较少的分布机会。“研究较少”“换国家”“未用某方法”只能先成为C级。</p><p>正式缺口遵循：已有知识→当前解释→失效位置→知识后果→新解释需求→可检验问题→识别性设计→贡献。</p><p>方法不写死PLS-SEM、ANN或fsQCA。先区分描述、解释、因果、预测、配置、过程、测量或证据综合，再选设计、数据和估计工具。用户偏好仍需适配审查。</p><p>外部理论库可独立维护；任务可选本地、LLM、结合或跳过。空库、损坏、无匹配或无法核验时自动切换机制—边界—竞争解释叙事。理论模块永不阻断写作和交付。</p></div>
+      <div data-lang="en"><h2>11. Gaps, theory, and design</h2><p>Level A is explanatory failure, B is evidential/inferential failure, and C is a distributional opportunity. Few studies, a new country, or an unused method starts at C.</p><p>Formal gaps follow known evidence → explanation → failure → consequence → needed explanation/evidence → testable question → identifying design → contribution.</p><p>PLS-SEM, ANN, and fsQCA are not defaults. The workflow identifies the inferential goal, chooses design before estimator, checks data/identification, and reviews user preferences for fit.</p><p>The external theory library is optional and fail-open. Missing or unverified support yields mechanism–boundary–competition prose and never blocks delivery.</p></div>
+    </section>
+
+    <section id="writing">
+      <div data-lang="zh"><h2>12. 写作顺序与质量</h2><ol><li>收集综述缺口偏好并完成综述。</li><li>同步参考文献、逐句及原子论断审计，交付HTML草稿。</li><li>等待<code>确认综述</code>或修改。</li><li>确认后独立询问绪论缺口/研究问题，可<code>跳过</code>或<code>不写绪论</code>。</li><li>写8–12个连续自然段、约3,000–5,000汉字、无正文小标题/列表的绪论。</li></ol><p>绪论逻辑：重要性→知识基线→解释/推断失败→研究修复→贡献；第一段现实背景必须可核验。综述逻辑：理论定位→构念比较→机制整合→分歧/边界→综合判断。</p><p>复合句拆为原子论断，引文紧邻其具体对象、机制和结果；证据触发语句必须引用。综合性论断通常至少三项独立研究，并纳入质量与反例。</p></div>
+      <div data-lang="en"><h2>12. Writing order and quality</h2><ol><li>Collect review-gap preferences and complete the review.</li><li>Synchronize references and audit sentence/atomic claims; deliver an HTML preview.</li><li>Wait for review approval or revision.</li><li>Only then collect an independent introduction focus, skip, or decline.</li><li>Write an 8–12 paragraph, 3,000–5,000-character Chinese introduction without body headings/lists.</li></ol><p>The introduction moves importance → baseline → explanatory/inferential failure → study repair → contribution. Reviews move theory position → constructs → mechanisms → disagreement/boundary → synthesis.</p><p>Atomic claims receive exact nearby citations. Broad synthesis normally needs three independent studies plus quality and counterevidence review.</p></div>
+    </section>
+
+    <section id="delivery">
+      <div data-lang="zh"><h2>13. 双版本与HTML中心交付</h2><p>证据提示版保留证据等级和边界；投稿正文版删除面向流程的措辞，但不会机械删词或提高确定性：充分支持则保留，部分支持的核心关系改为待检验命题，不支持且非必要则删除。</p><p>最终交付审计/清洁Markdown、单文件离线HTML、引用RIS和任务索引。不预生成DOCX。HTML点击“导出Word”才在浏览器生成DOCX；“导出PDF”调用A4打印。无CDN，并在导出前清除内部ID与异常标点。</p><p>可见引文、审计绑定、APA文末和RIS集合必须一致；正文或审计哈希变化后重新验证，正式交付不能绕过失败验证。</p></div>
+      <div data-lang="en"><h2>13. Variants and HTML-first delivery</h2><p>The evidence-aware version preserves evidence boundaries. Publication prose removes workflow-facing language without increasing certainty: supported claims stay, essential partial claims become propositions, and unsupported nonessential claims go.</p><p>Deliverables are audit/clean Markdown, self-contained HTML, citation-matched RIS, and an index. No DOCX is pre-generated. HTML creates Word client-side and opens A4 printing for PDF, without a CDN.</p><p>Visible citations, audit bindings, APA references, and RIS sets must match. Changed hashes require revalidation and failed validation cannot be bypassed.</p></div>
+    </section>
+
+    <section id="commands">
+      <div data-lang="zh"><h2>14. 常用高级命令</h2><p><code>&lt;PIPELINE&gt;</code>是技能中<code>scripts/review_pipeline.py</code>的路径。</p></div><div data-lang="en"><h2>14. Advanced commands</h2><p><code>&lt;PIPELINE&gt;</code> is the path to <code>scripts/review_pipeline.py</code>.</p></div>
+      <pre><button class="copy">复制 / Copy</button><code>python &lt;PIPELINE&gt; doctor --json
+python &lt;PIPELINE&gt; wizard --task TASK --title "TOPIC" --mode api-search|strategy-only
+python &lt;PIPELINE&gt; validate-plan --task TASK
+python &lt;PIPELINE&gt; search-strategy --task TASK --mode api-search|strategy-only
+python &lt;PIPELINE&gt; search --task TASK --confirm
+python &lt;PIPELINE&gt; ingest --task TASK FILE_OR_FOLDER...
+python &lt;PIPELINE&gt; extract --task TASK FILE_OR_FOLDER...
+python &lt;PIPELINE&gt; corpus-policy --task TASK --mode all|focused
+python &lt;PIPELINE&gt; focus-plan --task TASK --phase prepare|validate
+python &lt;PIPELINE&gt; focus --task TASK --output-task FOCUSED --spec focus_plan.json
+python &lt;PIPELINE&gt; analyze --task TASK --language auto --nmf-structure auto
+python &lt;PIPELINE&gt; build-evidence --task TASK
+python &lt;PIPELINE&gt; build-semantic --task TASK --phase prepare|compile|reconcile|validate
+python &lt;PIPELINE&gt; synthesize-effects --task TASK --phase prepare|compile|validate
+python &lt;PIPELINE&gt; build-gaps --task TASK --phase prepare|compile|validate
+python &lt;PIPELINE&gt; recommend-design --task TASK --phase prepare|compile|validate
+python &lt;PIPELINE&gt; theory-support --task TASK --mode combined|local-only|llm-only|skip
+python &lt;PIPELINE&gt; audit-writing --task TASK --document review|introduction
+python &lt;PIPELINE&gt; sync-references --task TASK --document review|introduction
+python &lt;PIPELINE&gt; build-publication --task TASK --document review|introduction --phase prepare|compile|validate
+python &lt;PIPELINE&gt; document-approval --task TASK --document review --status approved|revision-requested
+python &lt;PIPELINE&gt; validate --task TASK
+python &lt;PIPELINE&gt; export-deliverables --task TASK --document review|introduction --variant evidence-aware|publication|both
+python &lt;PIPELINE&gt; status --task TASK</code></pre>
+      <p data-lang="zh">普通用户优先通过对话使用；CLI主要用于诊断、恢复和高级控制。</p><p data-lang="en">Prefer host conversation for ordinary use; direct CLI is mainly for diagnostics, recovery, and advanced control.</p>
+    </section>
+
+    <section id="troubleshooting">
+      <div data-lang="zh"><h2>15. 常见问题</h2><ul><li>缺key：选无API模式或安全运行<code>credentials setup</code>。</li><li>结果太杂：建立当前任务focus plan，不删母语料。</li><li>聚焦太少：扩展理论补充/写作证据并保留直接与邻近边界。</li><li>无摘要/全文：可计量，但元数据不能变成内容结论。</li><li>NMF不稳定：仅在收敛和覆盖允许时作探索性骨架。</li><li>高级模块跳过：检查年度历史、参考文献年份或本地引文边；数据不足时降级是正确结果。</li><li>理论库失败：自动转理论中性叙事。</li><li>恢复：运行<code>status</code>并按<code>user_prompt</code>/<code>next_command</code>继续。</li><li>HTML被阻止：解决过期审计、引用集合、未知记录、因果夸大或缺少确认。</li></ul></div>
+      <div data-lang="en"><h2>15. Troubleshooting</h2><ul><li>Missing key: use strategy-only or secure setup.</li><li>Noisy results: create a current-task focus plan and preserve the master corpus.</li><li>Sparse focus: expand supplemental/writing evidence while retaining direct/adjacent boundaries.</li><li>No abstract/full text: bibliometrics remain possible, but metadata is not content evidence.</li><li>Unstable NMF: exploratory scaffold only when convergence/coverage allow.</li><li>Skipped advanced module: inspect required temporal/reference/citation coverage; downgrade may be correct.</li><li>Theory failure: automatic theory-neutral fallback.</li><li>Resume with <code>status</code>; resolve stale audits, citation mismatches, overclaims, or missing approval before final HTML.</li></ul></div>
+    </section>
+
+    <section id="integrity">
+      <div data-lang="zh"><h2>16. 学术诚信、官方链接与发布说明</h2><ul><li>只处理用户合法持有、OA或机构合法授权全文。</li><li>不绕过登录、验证码、访问控制或付费墙。</li><li>不伪造题录、引文、DOI、页码、锚点、结果或现实统计。</li><li>元数据/摘要/全文强度不可偷换；投稿版不能升级证据。</li><li>计量、理论库和LLM知识不替代当前任务证据。</li><li>作者负责最终核验、判断和署名；PRISMA风格日志不自动等于满足注册规范。</li></ul><h3>官方链接</h3></div>
+      <div data-lang="en"><h2>16. Integrity, official links, and release</h2><ul><li>Use only user-held, OA, or institution-authorized full text.</li><li>Never bypass authentication, CAPTCHAs, access controls, or paywalls.</li><li>Never fabricate records, citations, DOIs, pages, anchors, findings, or statistics.</li><li>Publication prose cannot upgrade metadata/abstract/full-text support.</li><li>Bibliometrics, theory libraries, and model knowledge do not replace task evidence.</li><li>Authors retain final responsibility; PRISMA-style logs do not automatically meet registration rules.</li></ul><h3>Official links</h3></div>
+      <ul><li><a href="https://openalex.org/settings/api">OpenAlex API settings</a></li><li><a href="https://openalex.org/settings/usage">OpenAlex usage</a></li><li><a href="https://developers.openalex.org/guides/authentication">OpenAlex Authentication &amp; Pricing</a></li><li><a href="https://developers.openalex.org/api-reference/introduction">OpenAlex API overview</a></li><li><a href="https://developers.openai.com/codex/skills/">Codex Skills</a></li><li><a href="https://code.claude.com/docs/en/slash-commands">Claude Code Skills</a></li></ul>
+      <p data-lang="zh">文档核对日期：<strong>2026-07-15</strong>。额度、价格和宿主安装位置以官方页面为准。发布技能目录只包含<code>SKILL.md</code>、<code>agents/</code>、<code>assets/</code>、<code>references/</code>和<code>scripts/</code>，不含任务、测试、缓存、凭据或用户资料。</p>
+      <p data-lang="en">Documentation verified on <strong>2026-07-15</strong>. Official pages govern changing quotas, prices, and host locations. The release skill contains only <code>SKILL.md</code>, <code>agents/</code>, <code>assets/</code>, <code>references/</code>, and <code>scripts/</code>, with no tasks, tests, caches, secrets, or user data.</p>
+    </section>
+    <section id="demos">
+      <div data-lang="zh" class="demo-intro">
+        <h2>17. 完整交付成果示例</h2>
+        <p>以下两个静态示例完整保留原成果的学术正文与文末参考文献，用于展示技能最终交付物的篇章组织、排版层级和引文呈现方式。</p>
+        <ul><li><strong>绪论示例：</strong>观察现实背景、知识基线、解释缺口、研究目标和贡献如何形成连续漏斗。</li><li><strong>综述示例：</strong>观察概念边界、机制综合、分歧、方法评估、Research Gap与研究议程如何形成解释性叙事。</li></ul>
+        <div class="demo-warning"><strong>重要边界：</strong>两个示例均为“未验证草稿预览”，只用于说明输出结构与写作组织，不代表其事实、理论、引文或APA细节已经完成最终审计。不得把示例中的论断、理论或参考文献迁移到无关研究任务。</div>
+      </div>
+      <div data-lang="en" class="demo-intro">
+        <h2>17. Complete Deliverable Examples</h2>
+        <p>The two static examples preserve the complete scholarly body and reference list of the source deliverables, demonstrating document organization, academic layout, and citation presentation.</p>
+        <ul><li><strong>Introduction:</strong> inspect the continuous funnel from real-world context and knowledge baseline to explanatory gap, objectives, and contribution.</li><li><strong>Review:</strong> inspect how construct boundaries, mechanism synthesis, disagreement, methods, research gaps, and agenda form an explanatory narrative.</li></ul>
+        <div class="demo-warning"><strong>Important boundary:</strong> both are unvalidated draft previews. They demonstrate output form and writing organization only; their facts, theories, citations, and APA details are not represented as finally audited. Never transfer their claims or references into an unrelated task.</div>
+      </div>
+      <details class="demo-shell" id="demo-introduction">
+        <summary><span data-lang="zh">展开：SSCI漏斗型绪论（投稿正文版，未验证草稿）</span><span data-lang="en">Expand: SSCI funnel introduction (publication version, unvalidated draft)</span></summary>
+        <div class="demo-meta"><span data-lang="zh">完整静态内容：11个正文自然段＋146条参考文献；已移除原Demo的工具栏、脚本和导出按钮。</span><span data-lang="en">Complete static content: 11 body paragraphs plus 146 references; the source toolbar, scripts, and export buttons were removed.</span></div>
+        <article class="demo-paper" data-demo="introduction-publication-draft" data-source-sha256="eb64ad2ba63e39f866a9ed49ce1f6254cdef83b061f576f31e00cf10abd678df">
+<div class="demo-body">
+<p>烟草使用仍是全球最重要的可预防健康风险之一。世界卫生组织指出，烟草每年导致超过七百万人死亡；多数知晓危害的吸烟者希望戒烟，但综合戒烟服务的全球覆盖仍然有限（世界卫生组织, 2025）。与此同时，健康风险的理解越来越发生于搜索引擎、社交媒体、即时通信和算法推荐共同构成的数字环境。世界卫生组织关于信息疫情的资料提示，过量、矛盾或误导性信息可能造成混乱、风险行为与信任受损（世界卫生组织, 2024），信息过载还可能诱发信息回避并妨碍可信健康信息抵达需要者（世界卫生组织, 2023）。因此，吸烟者是否接触到风险信息已不是唯一问题；更重要的是，信息负荷如何改变其健康搜索、疾病担忧和戒烟决策，以及他人的可见选择会在何种条件下放大这种转化。</p>
+<p> 信息超载与网络疑病症共同涉及数字信息、心理评价和行为反应，却处于解释链的不同位置。信息超载描述信息数量、复杂性、矛盾性或处理要求超过当时可用资源。网络疑病症描述在线健康搜索未能稳定缓解担忧，反而伴随搜索升级、强迫性确认、痛苦或功能干扰的循环 (Starčević &amp; Aboujaoude, 2015; Starčević et al., 2020; Starčević, 2023; Varma et al., 2021; Varma &amp; Singh, 2023)。量表开发与跨文化验证表明，过度搜索、强迫、痛苦、确认和对专业人员的不信任并非在所有测量工具中得到同等覆盖，因而网络疑病症不能被简化为一般健康焦虑或上网频率 (McElroy et al., 2019; Selvı et al., 2018; Wang et al., 2023; Robles-Mariños et al., 2023; Miezah et al., 2026)。不同样本和情境所得严重度分布亦不相同，提示人群构成、既有健康风险和数字使用习惯会改变构念的表现 (Sabir &amp; Naqvi, 2023; Mrayyan et al., 2023; Padagas et al., 2022; Uzun &amp; Zencir, 2022; Abdulrahman et al., 2024)。这一概念区分使本研究能够把信息环境压力视为前因，把问题性健康搜索循环视为心理过程，再检验该过程是否进入戒烟决策 (Starčević &amp; Aboujaoude, 2015; Starčević et al., 2020; Starčević, 2023; Varma et al., 2021; Varma &amp; Singh, 2023)。</p>
+<p> 信息超载研究已经由单纯的信息数量扩展到来源竞争、内容矛盾、更新速度、并行任务和可信度判断 (Ahmed, 2020; Tyrväinen et al., 2025; Soroya &amp; Faiola, 2023; Skulmowski &amp; Standl, 2021; Huang et al., 2022; Islam et al., 2020)。新闻、社交媒体与健康信息研究共同显示，用户面对高负荷时会在继续搜索、过滤、渠道转换和主动回避之间调整，而不是对信息增加作出同质反应 (Ahmed, 2020; Tyrväinen et al., 2025; Soroya &amp; Faiola, 2023; Skulmowski &amp; Standl, 2021; Huang et al., 2022; Islam et al., 2020)。医疗错误信息、未核实分享和选择性接触研究进一步说明，信息丰富只有在可评价、可整合且能转化为行动时才构成资源 (Yeung et al., 2021; Guo et al., 2023; Vintilă et al., 2023; Bai et al., 2025; Zheng et al., 2021)。否则，验证成本与风险相关性可能将信息资源转化为心理负担 (Yeung et al., 2021; Guo et al., 2023; Vintilă et al., 2023; Bai et al., 2025; Zheng et al., 2021)。医护人员、老年人、初为人母者和一般网络用户的资料还表明，专业责任、生活转型、工具过滤能力与任务紧迫性会改变应对路径 (Sbaffi et al., 2020; Vivion et al., 2024; Loudon et al., 2015; Jones &amp; Kelly, 2017; Jia &amp; Li, 2024)。因此，信息超载不应仅以消息条数测量，而应同时表示客观输入、感知处理困难、来源冲突与个体资源 (Ahmed, 2020; Tyrväinen et al., 2025; Soroya &amp; Faiola, 2023; Skulmowski &amp; Standl, 2021; Huang et al., 2022; Islam et al., 2020; Yeung et al., 2021; Guo et al., 2023; Vintilă et al., 2023; Bai et al., 2025; Zheng et al., 2021)。</p>
+<p> 网络疑病症研究则逐步形成了从构念测量到易感性、心理后果与行为管理的知识基线 (Starčević &amp; Aboujaoude, 2015; Starčević et al., 2020; Starčević, 2023; Varma et al., 2021; Varma &amp; Singh, 2023; McElroy et al., 2019; Selvı et al., 2018; Wang et al., 2023; Robles-Mariños et al., 2023; Miezah et al., 2026)。健康焦虑通常与网络疑病症密切相关，但在不同模型中有时被视为前因、有时被视为中介或结果，若不明确时间顺序便容易形成循环解释 (Bajcar &amp; Babiak, 2019; Sansakorn et al., 2024; Guo et al., 2024; Arsenakis et al., 2021; Liu et al., 2022; Ali et al., 2024)。不确定性不耐受、焦虑敏感性、元认知信念和递归思维提供了更细的停止规则解释：个体可能因为一次搜索无法形成足够确定的答案而继续确认，却在新信息暴露中发现更多异常线索 (Mento et al., 2022; Rashid et al., 2023; Fadila &amp; Dwatra, 2024; Nasiri et al., 2023; Zheng et al., 2020)。人格、家庭功能、压力、自尊和情绪调节等因素也与网络疑病症相关 (Cuesta et al., 2019; Oniszczenko, 2021; Zhou et al., 2022; Al‐Rawashdeh et al., 2022; Polat et al., 2022)。它们可能是远端脆弱性，也可能共同反映一般心理困扰 (Cuesta et al., 2019; Oniszczenko, 2021; Zhou et al., 2022; Al‐Rawashdeh et al., 2022; Polat et al., 2022)。因此，研究需要判断网络疑病症对戒烟意向是否具有超越一般焦虑、风险感知和搜索频率的增量解释，而不能仅把相关变量堆叠在同一横断面模型中 (Bajcar &amp; Babiak, 2019; Sansakorn et al., 2024; Guo et al., 2024; Arsenakis et al., 2021; Liu et al., 2022; Ali et al., 2024; Mento et al., 2022; Rashid et al., 2023; Fadila &amp; Dwatra, 2024; Nasiri et al., 2023; Zheng et al., 2020)。</p>
+<p> 将信息超载连接到网络疑病症，可以采用相互分工而非彼此替代的解释框架。压力评价视角说明高负荷信息如何经威胁、资源与可控性评价形成应对；不确定性管理视角说明用户为何在搜寻、回避或委托之间选择；重复在线行为框架则说明短期确认如何因暂时缓解不安而被强化 (Unknown author, 1984; Unknown author, 2001; Unknown author, 2019)。直接交叉研究已把信息超载、威胁评价、未核实分享和网络疑病症置于同一经验模型，支持检验“负荷—搜索循环”的关系，却尚不能凭同期路径确定单向因果 (Laato et al., 2020; Laato et al., 2020; Farooq et al., 2020; Bala et al., 2020; Zheng &amp; Jiang, 2022; Li et al., 2023)。有效搜索有时也能改善信息匹配，专业平台、一般搜索引擎和搜索时长的作用并不一致 (Wu et al., 2025; Peng et al., 2021; Islam et al., 2020; Elciyar, 2021; Xie et al., 2023; Wang et al., 2024)。由此形成的理论张力是：同一在线搜索既可能提供问题解决资源，也可能因缺少可信停止规则而强化疾病担忧；真正需要解释的是两种路径的分化条件。</p>
+<p> 网络疑病症进入戒烟意向的过程尤其具有双刃性。一方面，图形警示与个性化风险反馈研究显示，恐惧、易感性和风险显著性可以提高戒烟意向 (Kees et al., 2010; Shahab et al., 2007)。反复搜索吸烟后果因而可能使疾病威胁更具体，并增强改变行为的动机；这一推论仍需在网络疑病情境中直接检验 (Kees et al., 2010; Shahab et al., 2007)。另一方面，效能研究提示，只有当吸烟者相信自己能够戒烟并获得可行方案时，风险认知才更可能转化为意向 (Manyiwa &amp; Brennan, 2012; Hester, 2020; Poggiolini, 2019)。风险感知、自我效能和感知行为控制之间甚至可能出现方向相反的间接关系 (Manyiwa &amp; Brennan, 2012; Hester, 2020; Poggiolini, 2019)。数字戒烟干预还表明，戒烟意向、尝试戒烟、短期戒断与持续生化验证戒断是不同结果，参与度与干预结构会改变它们之间的转化 (Lenert et al., 2003; Ubhi et al., 2015; Tang et al., 2023; Hors-Fraile et al., 2022)。据此，网络疑病症可能通过威胁动员提高戒烟意向，也可能在低效能条件下转化为回避、无助或无效确认；该竞争机制需要在同一时间框架中检验 (Kees et al., 2010; Shahab et al., 2007; Manyiwa &amp; Brennan, 2012; Hester, 2020; Poggiolini, 2019)。</p>
+<p> 信息级联为上述后半段关系提供了一个可检验但并非自明的社会边界。级联并不等于社会支持或信息曝光，而是个体在自身信息有限时依据他人的可见采纳、转发速度、评论一致性或网络位置进行判断。反吸烟论据扩散、戒烟社区意见领袖和平台互动研究支持将这些可见线索具体化 (Lee, 2017; Myneni, 2013; Pócs et al., 2021)。在线戒烟社区中的情感支持、尊重支持、互惠与知识分享能够提供资源，但其作用机制不同于把他人选择当作信息质量或行为可行性的替代信号 (Santo et al., 2022; Li et al., 2021; Li et al., 2021)。描述性规范未必独立预测戒烟意向，集体智能推荐也未必改善总体戒断，外部社会影响甚至可能抑制参与 (Hester, 2020; Hors-Fraile et al., 2022; El-Hilly et al., 2016)。因此，本研究把正向调节界定为方向性假设：只有当级联内容明确指向戒烟、来源可信、参照群体与自我相关且戒烟方案具有可行性时，信息级联才更可能强化网络疑病症对戒烟意向的正向作用 (Lee, 2017; Myneni, 2013; Pócs et al., 2021; Hester, 2020; Hors-Fraile et al., 2022; El-Hilly et al., 2016)。零效应、负向效应和效能依赖效应均须作为竞争结果保留 (Hester, 2020; Hors-Fraile et al., 2022; El-Hilly et al., 2016)。</p>
+<p> 这一机制还受到渠道、素养与人群差异的共同约束 (Bahadir &amp; Dündar, 2024; Farooq et al., 2021; Zimmerman, 2021; Guo et al., 2021; Chen et al., 2021; Marsall et al., 2021; Zhao et al., 2024; Aslan &amp; Koca, 2025; Çol et al., 2025; Bajčić et al., 2024)。传统媒体、搜索引擎、社交媒体、专业医疗平台和生成式人工智能在来源可见性、排序逻辑、反馈速度与重复暴露上不同，单纯记录渠道使用无法判断信息质量和使用目的 (Bahadir &amp; Dündar, 2024; Farooq et al., 2021; Zimmerman, 2021; Guo et al., 2021; Chen et al., 2021)。eHealth素养也不只是查找能力，而包含评价、整合和应用；高搜索能力若缺少停止规则或可信来源，可能扩大而非降低暴露 (Marsall et al., 2021; Zhao et al., 2024; Aslan &amp; Koca, 2025; Çol et al., 2025; Bajčić et al., 2024)。年龄、疾病经历、健康风险、家庭环境、心理韧性及社会支持会改变威胁评价与应对资源，疫情样本中的高威胁、封控和医疗可及性变化又限制了外推 (Jiang et al., 2024; Šoštarić et al., 2023; Şavkın et al., 2022; Xu &amp; Chen, 2024; Bazán et al., 2020; Kurçer et al., 2021; Shailaja et al., 2020; Vismara et al., 2021)。这些条件不应作为无解释力的控制变量列表，而应服务于判断信息超载何时形成网络疑病症、网络疑病症何时形成戒烟动机，以及级联线索何时真正提供可行动的社会信息 (Bahadir &amp; Dündar, 2024; Farooq et al., 2021; Zimmerman, 2021; Guo et al., 2021; Chen et al., 2021; Jiang et al., 2024; Šoštarić et al., 2023; Şavkın et al., 2022; Xu &amp; Chen, 2024; Bazán et al., 2020; Kurçer et al., 2021; Shailaja et al., 2020; Vismara et al., 2021)。</p>
+<p> 由此形成的核心缺口不是“尚未把四个变量放入同一模型”，而是现有知识在解释与推断上存在三处断裂。第一，横断面资料无法区分信息超载先于网络疑病症、健康焦虑和搜索先于主观超载，还是三者构成反馈循环 (Infanti et al., 2023; Oniszczenko, 2022; Bajcar &amp; Babiak, 2019; Liu et al., 2022; McElroy et al., 2019; Barke &amp; Doering, 2020; Marsall et al., 2021)。第二，戒烟研究揭示了威胁与效能的共同作用，却尚未说明问题性健康搜索产生的担忧何时成为戒烟动机、何时变成回避 (Kees et al., 2010; Shahab et al., 2007; Manyiwa &amp; Brennan, 2012; Hester, 2020; Poggiolini, 2019; Kunst et al., 2019; Tang et al., 2023)。第三，社会扩散研究尚未区分级联线索、情感支持、来源可信度和单纯曝光量，因此不能直接推断正向调节 (Lee, 2017; Pócs et al., 2021; Hors-Fraile et al., 2022; El-Hilly et al., 2016; Myneni, 2013)。测量上还必须分离信息数量、矛盾性、搜索强度、健康焦虑、网络疑病症与戒烟自我效能 (Infanti et al., 2023; Oniszczenko, 2022; Bajcar &amp; Babiak, 2019; Liu et al., 2022; McElroy et al., 2019; Barke &amp; Doering, 2020; Marsall et al., 2021; Kees et al., 2010; Shahab et al., 2007; Manyiwa &amp; Brennan, 2012; Hester, 2020; Poggiolini, 2019; Kunst et al., 2019; Tang et al., 2023)。结果上则必须区分意向、尝试、短期戒断和持续戒断 (Lenert et al., 2003; Ubhi et al., 2015; Tang et al., 2023; Hors-Fraile et al., 2022)。这些缺口要求新的研究同时改善构念边界、时间顺序、竞争机制和行为效度，而不是依靠更复杂的统计工具替代识别设计 (Infanti et al., 2023; Oniszczenko, 2022; Bajcar &amp; Babiak, 2019; Liu et al., 2022; McElroy et al., 2019; Barke &amp; Doering, 2020; Marsall et al., 2021; Lee, 2017; Pócs et al., 2021; Hors-Fraile et al., 2022; El-Hilly et al., 2016; Myneni, 2013)。</p>
+<p> 基于上述缺口，本研究拟检验一个有条件的心理过程：信息超载是否预测随后网络疑病症的变化，网络疑病症是否在控制一般健康焦虑、风险感知与戒烟自我效能后预测戒烟意向，以及信息级联是否在内容指向戒烟、来源可信和参照群体相关时强化这一关系 (Laato et al., 2020; Laato et al., 2020; Farooq et al., 2020; Bala et al., 2020; Zheng &amp; Jiang, 2022; Li et al., 2023; Kees et al., 2010; Shahab et al., 2007; Hester, 2020; Hors-Fraile et al., 2022; El-Hilly et al., 2016)。相应地，研究将把“信息超载—网络疑病症—戒烟意向”的间接效应作为待检验命题，把级联的正向作用与零效应、负向作用和效能依赖作用置于同一竞争框架 (Manyiwa &amp; Brennan, 2012; Hester, 2020; Poggiolini, 2019; Hors-Fraile et al., 2022; El-Hilly et al., 2016)。更有识别力的设计应结合至少三波追踪与嵌入式信息界面实验：追踪用于建立负荷、搜索循环、意向和实际尝试的时间顺序，实验用于操纵采纳数量、传播速度、评论一致性、来源可信度及效能信息 (Infanti et al., 2023; Oniszczenko, 2022; Bajcar &amp; Babiak, 2019; Liu et al., 2022; McElroy et al., 2019; Barke &amp; Doering, 2020; Marsall et al., 2021; Lee, 2017; Pócs et al., 2021; Hors-Fraile et al., 2022; El-Hilly et al., 2016; Myneni, 2013)。</p>
+<p> 理论上，本研究把数字信息压力、问题性健康搜索与行为改变连接为可证伪的过程，并明确威胁动员和无效焦虑的分化条件 (Unknown author, 1984; Unknown author, 2001; Unknown author, 2019; Kees et al., 2010; Shahab et al., 2007; Manyiwa &amp; Brennan, 2012; Hester, 2020; Poggiolini, 2019)。方法上，它以时间、操纵和行为结果提升因果解释；实践上，它为平台呈现社会线索、戒烟信息设计和分层干预提供依据 (Lenert et al., 2003; Ubhi et al., 2015; Tang et al., 2023; Hors-Fraile et al., 2022; Lee, 2017; Myneni, 2013; Pócs et al., 2021; Infanti et al., 2023; Oniszczenko, 2022; Bajcar &amp; Babiak, 2019; Liu et al., 2022; McElroy et al., 2019; Barke &amp; Doering, 2020; Marsall et al., 2021)。研究还将比较不同吸烟阶段、既往戒烟经历与数字素养人群，避免把平均效应误当作对所有吸烟者都成立的规律 (Marsall et al., 2021; Zhao et al., 2024; Aslan &amp; Koca, 2025; Çol et al., 2025; Bajčić et al., 2024; Jiang et al., 2024; Šoštarić et al., 2023; Şavkın et al., 2022; Xu &amp; Chen, 2024; Bazán et al., 2020; Kurçer et al., 2021; Shailaja et al., 2020; Vismara et al., 2021)。上述研究任务建立在信息超载、网络疑病症、数字健康决策、戒烟干预与社会扩散等多类证据的交叉综合之上 (Soroya et al., 2020; Yang &amp; Xu, 2025; Mahdi et al., 2020; Metag &amp; Gurr, 2022; Li et al., 2023; Ganggi, 2020; Kusi et al., 2022; Ingusci et al., 2021; Wadhar et al., 2023; Al-Kumaim et al., 2021; Hartog, 2017; El-Zoghby et al., 2024; Vujić et al., 2023; Müller et al., 2021; Bagarić &amp; Jokić‐Begić, 2019; Ciułkowicz et al., 2022; Fang &amp; Mushtaque, 2024; Zhang et al., 2024; Guo et al., 2024; Золотарева, 2022; Bagarić &amp; Jokić‐Begić, 2022; Henwood et al., 2002; West et al., 2020; Wangler &amp; Janský, 2020; Eichenberg &amp; Schott, 2019; Melhem et al., 2024; Lim &amp; Hong, 2025; Zhou &amp; Li, 2024; Babu, 2025; Yan, 2025; Ghalavand et al., 2025; Wu et al., 2021; Gupte, 2024; Ciułkowicz et al., 2022; Kurtça, 2025; Karakaş et al., 2022; Xu et al., 2025; MAKSIMENKO et al., 2025; Zhong et al., 2024; Özdel et al., 2025; Üzüm et al., 2023; Shahani et al., 2023; Purwanto et al., 2021; Ghouri et al., 2024)，其贡献取决于能否以可比较预测区分竞争解释，而不取决于变量组合或方法本身的新颖性。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+<h2 id="demo-intro-references">参考文献</h2>
+<div class="demo-reference-list">
+<p>A. A. MAKSIMENKO, А.А. Золотарева, &amp; D.V. Kashirskiy. (2025). From Screens to Sleeplessness: How Digital Stressors Are Linked to Sleep Characteristics in the Russian Population. Ekologiya Cheloveka (Human Ecology). https://doi.org/10.17816/humeco646356</p>
+<p>A.K.M. Najmul Islam, Eoin Whelan, &amp; Stoney Brooks. (2020). Does multitasking computer self-efficacy mitigate the impact of social media affordances on overload and fatigue among professionals?. ARAN (University of Galway Research Repository) (Ollscoil na Gaillimhe – University of Galway). https://doi.org/10.1108/itp-10-2019-0548</p>
+<p>Abdulrahman El-Hilly, Sheeraz Iqbal, Maroof Ahmed, Yusuf Sherwani, Mohammed Muntasir, Sarim Siddiqui, Zaid Al-Fagih, Omar S. Usmani, &amp; Andreas B. Eisingerich. (2016). Game On? Smoking Cessation Through the Gamification of mHealth: A Longitudinal Qualitative Study. JMIR Serious Games. https://doi.org/10.2196/games.5678</p>
+<p>Aleksandar Vujić, Marija Volarov, Milan Latas, Zsolt Demetrovics, Orsolya Kiraly, &amp; Attila Szabó. (2023). Are Cyberchondria and Intolerance of Uncertainty Related to Smartphone Addiction?. International Journal of Mental Health and Addiction. https://doi.org/10.1007/s11469-023-01054-6</p>
+<p>Alessio De Santo, Arielle Moro, Bruno Kocher, &amp; Adrian Holzer. (2022). Helping Each Other Quit Online: Understanding User Engagement and Real-life Outcomes of the r/StopSmoking Digital Smoking Cessation Community. ACM Transactions on Social Computing. https://doi.org/10.1145/3564745</p>
+<p>Alexander Skulmowski, &amp; Bernhard Standl. (2021). &lt;scp&gt;COVID&lt;/scp&gt; ‐19 information fatigue? A case study of a German university website during two waves of the pandemic. Human Behavior and Emerging Technologies. https://doi.org/10.1002/hbe2.260</p>
+<p>Alexandre Infanti, Vladan Starčević, Adriano Schimmenti, Yasser Khazaal, Laurent Karila, Alessandro Giardina, Maèva Flayelle, Seyedeh Boshra Hedayatzadeh Razavi, Stéphanie Baggio, Claus Vögele, &amp; Joël Billieux. (2023). Predictors of Cyberchondria During the COVID-19 Pandemic: Cross-sectional Study Using Supervised Machine Learning. JMIR Formative Research. https://doi.org/10.2196/42206</p>
+<p>Ali Farooq, Samuli Laato, &amp; A.K.M. Najmul Islam. (2020). Impact of Online Information on Self-Isolation Intention During the COVID-19 Pandemic: Cross-Sectional Study. Journal of Medical Internet Research. https://doi.org/10.2196/19128</p>
+<p>Ali Farooq, Samuli Laato, A.K.M. Najmul Islam, &amp; Jouni Isoaho. (2021). Understanding the impact of information sources on COVID-19 related preventive measures in Finland. Technology in Society. https://doi.org/10.1016/j.techsoc.2021.101573</p>
+<p>Andy Wai Kan Yeung, Anela Tosevska, Elisabeth Klager, Fabian Eibensteiner, Christos Tsagkaris, Emil D. Parvanov, Faisal A. Nawaz, Sabine Völkl-Kernstock, Eva Schaden, Maria Kletečka-Pulker, Harald Willschke, &amp; Atanas G. Atanasov. (2021). Medical and Health-Related Misinformation on Social Media: Bibliometric Study of the Scientific Literature. Journal of Medical Internet Research. https://doi.org/10.2196/28152</p>
+<p>Anithamol Babu. (2025). Between access and anxiety: the paradox of digital mental health literacy. Frontiers in Psychiatry. https://doi.org/10.3389/fpsyt.2025.1691945</p>
+<p>Anton E. Kunst, Casper van Splunter, Sigrid Troelstra, &amp; Jizzo R. Bosdriesz. (2019). Did the introduction of pictorial health warnings increaseinformation seeking for smoking cessation?: Time-seriesanalysis of Google Trends data in six countries. Tobacco Prevention &amp; Cessation. https://doi.org/10.18332/tpc/111130</p>
+<p>Antonia Barke, &amp; Bettina K. Doering. (2020). Development of an Instrument to Assess Parents’ Excessive Web-Based Searches for Information Pertaining to Their Children’s Health: The “Children’s Health Internet Research, Parental Inventory” (CHIRPI). Journal of Medical Internet Research. https://doi.org/10.2196/16148</p>
+<p>Astrid Müller, Eva Baumann, &amp; Marie‐Luise Dierks. (2021). [Cyberchondria - A New Behavioral Syndrome?]. PubMed. https://doi.org/10.1055/a-1348-8059</p>
+<p>B Shailaja, Vibha Shetty, Suprakash Chaudhury, &amp; T Murali. (2020). Exploring cyberchondria and its associations in dental students amid COVID-19 infodemic. Industrial Psychiatry Journal. https://doi.org/10.4103/ipj.ipj_212_20</p>
+<p>Bahar Kefeli Çol, Ayşe Gümüşler Başaran, &amp; Burcu Genç Köse. (2025). The Relationship Between E-Health Literacy, Health Anxiety, Cyberchondria, and Death Anxiety in University Students That Study in Health Related Department. Journal of Multidisciplinary Healthcare. https://doi.org/10.2147/jmdh.s513017</p>
+<p>Beata Bajcar, &amp; Jolanta Babiak. (2019). Self-esteem and cyberchondria: The mediation effects of health anxiety and obsessive–compulsive symptoms in a community sample. Current Psychology. https://doi.org/10.1007/s12144-019-00216-x</p>
+<p>Bing-Yue Zhao, Meirong Chen, Rong Lin, Yuanjiao Yan, &amp; Hong Li. (2024). Influence of information anxiety on core competency of registered nurses: mediating effect of digital health literacy. BMC Nursing. https://doi.org/10.1186/s12912-024-02275-3</p>
+<p>Branka Bagarić, &amp; Nataša Jokić‐Begić. (2019). Cyberchondria – Health Anxiety Related to Internet Searching. Socijalna psihijatrija. https://doi.org/10.24869/spsih.2019.28</p>
+<p>Branka Bagarić, &amp; Nataša Jokić‐Begić. (2022). Online research on COVID-19—The role of content ranking and COVID-19 fear. Cyberpsychology Journal of Psychosocial Research on Cyberspace. https://doi.org/10.5817/cp2022-5-2</p>
+<p>Carmela Mento, Maria Silvestri, Pilar Amézaga, Maria Muscatello, Valentina Romeo, Antonio Bruno, &amp; Clemente Cedro. (2022). Anxiety sensitivity, uncertainty and recursive thinking: A continuum on Cyberchondria conditions during the Covid Outbreak. Journal of Mind and Medical Sciences. https://doi.org/10.22543/7674.91.p7887</p>
+<p>Chenglong Li, Hongxiu Li, &amp; Reima Suomi. (2021). Antecedents and consequences of the perceived usefulness of smoking cessation online health communities. Internet Research. https://doi.org/10.1108/intr-04-2020-0220</p>
+<p>Chenglong Li, Hongxiu Li, Reima Suomi, &amp; Liu Yong. (2021). Knowledge sharing in online smoking cessation communities: a social capital perspective. Internet Research. https://doi.org/10.1108/intr-03-2020-0113</p>
+<p>Chenjin Jia, &amp; Pengcheng Li. (2024). Generation Z’s Health Information Avoidance Behavior: Insights From Focus Group Discussions. Journal of Medical Internet Research. https://doi.org/10.2196/54107</p>
+<p>Chenxi Yang, &amp; Richard Huan Xu. (2025). Impact of Cyberchondria on Health and Quality of Life: Scoping Review. Journal of Medical Internet Research. https://doi.org/10.2196/77977</p>
+<p>Christiane Eichenberg, &amp; Markus Schott. (2019). Use of Web-Based Health Services in Individuals With and Without Symptoms of Hypochondria: Survey Study. Journal of Medical Internet Research. https://doi.org/10.2196/10980</p>
+<p>Claudia Poggiolini. (2019). High self-efficacy regarding smoking cessation may weaken the intention to quit smoking. Cogent Psychology. https://doi.org/10.1080/23311908.2019.1574096</p>
+<p>Daniel Miezah, Rejoice Adzakpa, Emmanuella Mawuena Ama Bani, &amp; Paul Obeng. (2026). Prevalence and Associated Factors of Cyberchondria: A Scoping Review. The Scientific World JOURNAL. https://doi.org/10.1155/tswj/9950027</p>
+<p>Dawei Wang, Lingchao Sun, Yunru Shao, Xiaoyan Zhang, Phil Maguire, &amp; Yixin Hu. (2023). Research and Evaluation of a Cyberchondria Severity Scale in a Chinese Context. Psychology Research and Behavior Management. https://doi.org/10.2147/prbm.s431470</p>
+<p>Dávid Pócs, Otília Adamovits, Jezdancher Watti, Róbert Kovács, &amp; Ogúz Kelemen. (2021). Facebook Users’ Interactions, Organic Reach, and Engagement in a Smoking Cessation Intervention: Content Analysis. Journal of Medical Internet Research. https://doi.org/10.2196/27853</p>
+<p>Emanuela Ingusci, Fulvio Signore, Maria Luisa Giancaspro, Amelia Manuti, Monica Molino, Vincenzo Russo, Margherita Zito, &amp; Claudio Giovanni Cortese. (2021). Workload, Techno Overload, and Behavioral Stress During COVID-19 Emergency: The Role of Job Crafting in Remote Workers. Frontiers in Psychology. https://doi.org/10.3389/fpsyg.2021.655148</p>
+<p>Eoin McElroy, Mathew Kearney, Jade Touhey, Joseph Evans, Yasmin Cooke, &amp; Mark Shevlin. (2019). The CSS-12: Development and Validation of a Short-Form Version of the Cyberchondria Severity Scale. Ulster University Research Portal (Ulster University). https://doi.org/10.1089/cyber.2018.0624</p>
+<p>Filiz Polat, Leyla DELİBAŞ, &amp; İbrahim Bilir. (2022). Investigating the Relationship Between Cyberchondria Level and Perceived Stress in Young Adults. Turkish Journal of Science and Health. https://doi.org/10.51972/tfsd.1112388</p>
+<p>Flis Henwood, Sally Wyatt, Angie Hart, &amp; Julie Smith. (2002). Turned on or turned off?: accessing health information on the internet. Journal of the Association for Information Systems.</p>
+<p>Gideon Appiah Kusi, Mst Zannatul Azmira Rumki, Fiona Hammond Quarcoo, Esther Otchere, &amp; And Guanhui Fu. (2022). The Role of Information Overload on Consumers’ Online Shopping Behavior. Journal of Business and Management Studies. https://doi.org/10.32996/jbms.2022.4.4.16</p>
+<p>Han Zheng, &amp; Shaohai Jiang. (2022). Linking the Pathway from Exposure to Online Vaccine Information to Cyberchondria During the COVID-19 Pandemic: A Moderated Mediation Model. Cyberpsychology Behavior and Social Networking. https://doi.org/10.1089/cyber.2022.0045</p>
+<p>Han Zheng, Dion Hoe‐Lian Goh, Edmund W. J. Lee, Chei Sian Lee, &amp; Yin‐Leng Theng. (2021). Understanding the effects of message cues on &lt;scp&gt;COVID&lt;/scp&gt;‐19 information sharing on Twitter. Journal of the Association for Information Science and Technology. https://doi.org/10.1002/asi.24587</p>
+<p>Han Zheng, Xiaoyu Chen, &amp; Shaoxiong Fu. (2020). An exploration of determinants of cyberchondria: A moderated mediation analysis. Proceedings of the Association for Information Science and Technology. https://doi.org/10.1002/pra2.214</p>
+<p>Harun Aslan, &amp; Gülsüm Şeyma Koca. (2025). Examining the relationships between e-health literacy, cyberchondria, health anxiety, and health perception among foreign university students. BMC Public Health. https://doi.org/10.1186/s12889-025-25636-2</p>
+<p>Harveen Kaur Ubhi, Susan Michie, Daniel Kotz, Wai Chi Wong, &amp; Robert West. (2015). A Mobile App to Aid Smoking Cessation: Preliminary Evaluation of SmokeFree28. Journal of Medical Internet Research. https://doi.org/10.2196/jmir.3479</p>
+<p>Hossein Ghalavand, Sirous Panahi, &amp; Mohsen Nouri. (2025). Opportunities and challenges of social media for oral health literacy improvement: a qualitative investigation based on Iranian dentists’ perspectives. BMC Health Services Research. https://doi.org/10.1186/s12913-025-12845-z</p>
+<p>Jakob W. Hester. (2020). IDENTIFYING AND PREDICTING INTENTION TO QUIT USING JUUL AMONG EMERGING ADULTS. UKnowledge (University of Kentucky). https://doi.org/10.13023/etd.2020.074</p>
+<p>Jeremy Kees, Scot Burton, J. Craig Andrews, &amp; John Kozup. (2010). Understanding how Graphic Pictorial Warnings Work on Cigarette Packaging. e-Publications@Marquette (Marquette University). https://doi.org/10.1509/jppm.29.2.265</p>
+<p>Jiachen Yan. (2025). Adoption, Processing, and Persuasion Mechanisms of Health Information in Digital Media. The Journal of Medicine Humanity and Media. https://doi.org/10.62787/mhm.v3i3.229</p>
+<p>Jinsong Tang, Jie Yang, Yi Liu, Xiaocong Liu, Li Ling, Yunkai Sun, Jieyin Jin, Yehong Fang, Zitang Zhou, Yunfei Wang, Wei Chen, Ann McNeill, Brian C. Kelly, Joanna E Cohen, &amp; Yanhui Liao. (2023). Efficacy of WeChat-based online smoking cessation intervention (‘WeChat WeQuit’) in China: a randomised controlled trial. EClinicalMedicine. https://doi.org/10.1016/j.eclinm.2023.102009</p>
+<p>Joon Soo Lim, &amp; Nalae Hong. (2025). Perceived Search Overload, Generative AI Credibility, and Comparative Usefulness: A Channel Complementarity Approach to Health Information Seeking. Health &amp; New Media Research. https://doi.org/10.22720/hnmr.2025.00115</p>
+<p>Josephine de la Cuesta, Jypzie M. Catedrilla, Ryan Ebardo, Laiza LIMPIN, Cecilia B. LEAÑO, &amp; Hazel Trapero. (2019). Personality Traits of Future Nurses and Cyberchondria: Findings from an Emerging Economy. International Conference on Computers in Education. https://doi.org/10.58459/icce.2019.212</p>
+<p>Julia Metag, &amp; Gwendolin Gurr. (2022). Too Much Information? A Longitudinal Analysis of Information Overload and Avoidance of Referendum Information Prior to Voting Day. Journalism &amp; Mass Communication Quarterly. https://doi.org/10.1177/10776990221127380</p>
+<p>Julian Wangler, &amp; Michael Janský. (2020). General practitioners’ challenges and strategies in dealing with Internet-related health anxieties—results of a qualitative study among primary care physicians in Germany. Wiener Medizinische Wochenschrift. https://doi.org/10.1007/s10354-020-00777-8</p>
+<p>Kai Li, Shanshan Jiang, Xingde Yan, &amp; Jie Li. (2023). Mechanism study of social media overload on health self-efficacy and anxiety. Heliyon. https://doi.org/10.1016/j.heliyon.2023.e23326</p>
+<p>Katherine Jane Loudon, Steven Buchanan, &amp; Ian Ruthven. (2015). The everyday life information seeking behaviours of first-time mothers. Strathprints: The University of Strathclyde institutional repository (University of Strathclyde). https://doi.org/10.1108/jd-06-2014-0080</p>
+<p>Kemal Elciyar. (2021). OVERLOADING IN LOCKDOWN: EFFECTS OF SOCIAL, INFORMATION AND COMMUNICATION OVERLOADS IN COVID-19 DAYS. İNİF E - Dergi. https://doi.org/10.47107/inifedergi.872896</p>
+<p>Khalid A. Bin Abdulrahman, Sultan Khalid AL Musfir, Abdullah Suliman Alforaih, Asim Mohammed Alshehri, Ayed Khalid Aldossari, &amp; Fahad Dawood Bin Dawood. (2024). The prevalence of cyberchondria and the impact of skepticism on medical decisions among Imam Mohammed Ibn Saud Islamic University students, Riyadh, Saudi Arabia. Journal of Family Medicine and Primary Care. https://doi.org/10.4103/jfmpc.jfmpc_640_24</p>
+<p>Laura Sbaffi, James W. Walton, John Blenkinsopp, &amp; Graham Walton. (2020). Information Overload in Emergency Medicine Physicians: A Multisite Case Study Exploring the Causes, Impact, and Solutions in Four North England National Health Service Trusts. Journal of Medical Internet Research. https://doi.org/10.2196/19126</p>
+<p>Leslie Lenert, Ricardo F. Muñoz, Joel Stoddard, Kevin Delucchi, Aditya Bansod, Szymon Skoczeń, &amp; Eliseo J. Pérez‐Stable. (2003). Design and Pilot Evaluation of an Internet Smoking Cessation Program. Journal of the American Medical Informatics Association. https://doi.org/10.1197/jamia.m1128</p>
+<p>Lingling Zhong, Junwei Cao, &amp; Fengtao Xue. (2024). The paradox of convenience: how information overload in mHealth apps leads to medical service overuse. Frontiers in Public Health. https://doi.org/10.3389/fpubh.2024.1408998</p>
+<p>Lion Shahab, Sue Hall, &amp; Theresa M. Marteau. (2007). Showing smokers with vascular disease images of their arteries to motivate cessation: A pilot study. UCL Discovery (University College London). https://doi.org/10.1348/135910706x109684</p>
+<p>Lydia Qianqian Li, Quynh Ngoc Bui, &amp; Hui Yan. (2023). The impact of COVID-19 information overload on Vietnamese consumers' online purchase intention. International Journal of Emerging Markets. https://doi.org/10.1108/ijoem-05-2022-0860</p>
+<p>Majd T. Mrayyan, Ja’far M. Alkhawaldeh, Imad Alfayoumi, Abdullah Algunmeeyn, Hamzeh Y. Abunab, Wafika A. Suliman, Mohammad Abu Hasheesh, &amp; Raed Shudifat. (2023). COVID-19 era-related e-learning: a cross-sectional web-scale study of cyberchondria, internet addiction and anxiety-related symptomatology among university nursing students. BMJ Open. https://doi.org/10.1136/bmjopen-2023-071971</p>
+<p>Margaret S. Zimmerman. (2021). Health information-seeking behavior in the time of COVID-19: information horizons methodology to decipher source path during a global pandemic. Journal of Documentation. https://doi.org/10.1108/jd-01-2021-0022</p>
+<p>Marta Ciułkowicz, Błażej Misiak, Dorota Szczęśniak, Jolanta Grzebieluch, Julian Maciaszek, &amp; Joanna Rymaszewska. (2022). Social Support Mediates the Association between Health Anxiety and Quality of Life: Findings from a Cross-Sectional Study. International Journal of Environmental Research and Public Health. https://doi.org/10.3390/ijerph191912962</p>
+<p>Marta Ciułkowicz, Błażej Misiak, Dorota Szczęśniak, Jolanta Grzebieluch, Julian Maciaszek, &amp; Joanna Rymaszewska. (2022). The Portrait of Cyberchondria—A Cross-Sectional Online Study on Factors Related to Health Anxiety and Cyberchondria in Polish Population during SARS-CoV-2 Pandemic. International Journal of Environmental Research and Public Health. https://doi.org/10.3390/ijerph19074347</p>
+<p>Maryline Vivion, Valérie Reid, Ève Dubé, A. Coutant, Alexandre Benoît, &amp; André Tourigny. (2024). How older adults manage misinformation and information overload - A qualitative study. BMC Public Health. https://doi.org/10.1186/s12889-024-18335-x</p>
+<p>Matea Šoštarić, Una Mikac, &amp; Nataša Jokić‐Begić. (2023). Understanding cyberchondria in pregnant women: longitudinal assessment of risk factors, triggers, and outcomes. Journal of Psychosomatic Obstetrics &amp; Gynecology. https://doi.org/10.1080/0167482x.2023.2265050</p>
+<p>Matteo Vismara, Daniele Vitella, Roberta Biolcati, Federica Ambrosini, Veronica Pirola, Bernardo Dell’Osso, &amp; R. Truzoli. (2021). The Impact of COVID-19 Pandemic on Searching for Health-Related Information and Cyberchondria on the General Population in Italy. Frontiers in Psychiatry. https://doi.org/10.3389/fpsyt.2021.754870</p>
+<p>Matthias Marsall, Gerrit Engelmann, Eva‐Maria Skoda, Martin Teufel, &amp; Alexander Bäuerle. (2021). Measuring Electronic Health Literacy: Development, Validation, and Test of Measurement Invariance of a Revised German Version of the eHealth Literacy Scale. Journal of Medical Internet Research. https://doi.org/10.2196/28252</p>
+<p>Mehmet Ali Kurçer, Zeynep Erdoğan, &amp; Vildan ÇAKIR KARDEŞ. (2021). The effect of the COVID‐19 pandemic on health anxiety and cyberchondria levels of university students. Perspectives In Psychiatric Care. https://doi.org/10.1111/ppc.12850</p>
+<p>Mengmeng Guo, Oberiri Destiny Apuke, Elif Asude Tunca, &amp; Verlumun Celestine Gever. (2023). Modelling the Information Abundance Factors That Predict Fake News Sharing Behaviour of Social Media Users: Testing the Moderating Role of Resilience. Journal of Asian and African Studies. https://doi.org/10.1177/00219096231192312</p>
+<p>Mohammad Nasiri, Shahram Mohammadkhani, Mehdi Akbari, &amp; M Mahmoud Alilou. (2023). The structural model of cyberchondria based on personality traits, health-related metacognition, cognitive bias, and emotion dysregulation. Frontiers in Psychiatry. https://doi.org/10.3389/fpsyt.2022.960055</p>
+<p>Mohammed Najah Mahdi, Abdul Rahim Ahmad, Roslan Ismail, Hayder Natiq, &amp; Mohammed Mohammed. (2020). Solution for Information Overload Using Faceted Search–A Review. IEEE Access. https://doi.org/10.1109/access.2020.3005536</p>
+<p>Mona Vintilă, Gianina-Mălina Lăzărescu, Argyroula Kalaitzaki, Otilia Tudorel, &amp; Cosmin Goian. (2023). Fake news during the war in Ukraine: coping strategies and fear of war in the general population of Romania and in aid workers. Frontiers in Psychology. https://doi.org/10.3389/fpsyg.2023.1151794</p>
+<p>Ms. Sharvari S Gupte. (2024). INVESTIGATING THE ASSOCIATION BETWEEN CYBERCHONDRIA AND HEALTH ANXIETY. EPH - International Journal of Medical and Health Science. https://doi.org/10.53555/eijmhs.v10i2.242</p>
+<p>Muhammad Waleed Ayub Ghouri, Guofeng Wang, Muhammad Ali Hussain, Zhisheng Li, &amp; Tachia Chin. (2024). Provoking Buying Behaviors Amid Crises: Unfolding the Underlying Mechanisms of Psychological Impairments. International Journal of Mental Health Promotion. https://doi.org/10.32604/ijmhp.2024.044759</p>
+<p>Nabil Hasan Al-Kumaim, Abdulsalam K. Alhazmi, Fathey Mohammed, Nadhmi A. Gazem, Muhammad Salman Shabbir, &amp; Yousef Fazea. (2021). Exploring the Impact of the COVID-19 Pandemic on University Students’ Learning Life: An Integrated Conceptual Motivational Model for Sustainable and Healthy Online Learning. Sustainability. https://doi.org/10.3390/su13052546</p>
+<p>Neşe Karakaş, Çiğdem Tekin, Recep Bentlı, &amp; Ekrem Demir. (2022). Cyberchondria, Covid-19 phobia, and well-being: a relational study on teachers. La Medicina del lavoro. https://doi.org/10.23749/mdl.v113i3.12661</p>
+<p>Ningyuan Guo, Sheng Zhi Zhao, Xue Weng, Yongda Wu, Tzu Tsun Luk, Janet Yuen Ha Wong, Tai Hing Lam, &amp; Man Ping Wang. (2021). Associations of COVID-19 online information sources and information overload with psychological distress symptoms: a population-based study. Translational Behavioral Medicine. https://doi.org/10.1093/tbm/ibab086</p>
+<p>Novi Fadila, &amp; Free Dirga Dwatra. (2024). THE INFLUENCE INTOLERANCE OF UNCERTAINTY ON CYBERCHONDRIA IN EARLY ADULT INTERNET USERS. In Trend International Journal of Trends in Global Psychological Science and Education. https://doi.org/10.62260/intrend.v1i2.128</p>
+<p>Nudrat Rashid, Amina Shahid, Mehwish Munir, Muhammad Umar Khan, &amp; Zoobia Ramzan. (2023). Role of Anxiety Sensitivity, Intolerance of Uncertainty, and Cyberchondria Behaviors among Individuals Diagnosed with COVID-19. Pakistan Journal of Health Sciences. https://doi.org/10.54393/pjhs.v4i12.1173</p>
+<p>Olli Tyrväinen, Henri Pirkkalainen, Markus Salo, &amp; Heikki Karjaluoto. (2025). Overloaded yet addicted? A meta-analysis of the outcomes of social media overload. Telematics and Informatics. https://doi.org/10.1016/j.tele.2025.102247</p>
+<p>Ozkan Bahadir, &amp; Cihad Dündar. (2024). The impact of online health information source preference on intolerance to uncertainty and cyberchondria in a youthful generation. Indian Journal of Psychiatry. https://doi.org/10.4103/indianjpsychiatry.indianjpsychiatry_715_23</p>
+<p>Paul Hartog. (2017). A Generation of Information Anxiety: Refinements and Recommendations. The Christian librarian:/The Christian librarian. https://doi.org/10.55221/2572-7478.1007</p>
+<p>Paulo Rodrigo Bazán, Raymundo Machado de Azevedo Neto, Joao Antonio Antonio Dias, Vanessa Gil Salvatierra, Liana Guerra Sanches, Shirley Silva Lacerda, Edson Amaro, Elisa Harumi Kozasa, &amp; Joana Bisol Balardin. (2020). COVID-19 information exposure in digital media and implications for employees in the health care sector: findings from an online survey. Einstein (São Paulo). https://doi.org/10.31744/einstein_journal/2020ao6127</p>
+<p>Ping Wang, Wei Chen, Lin Li, Ming Yi, &amp; Heng Ding. (2024). Exploring the Routines from Fear of Missing Out to Cyberchondria via a Dual System Perspective. International Journal of Human-Computer Interaction. https://doi.org/10.1080/10447318.2024.2423333</p>
+<p>Preeda Sansakorn, Iqra Mushtaque, Muhammad Awais‐E‐Yazdan, &amp; Muhammad Khyzer Bin Dost. (2024). The Relationship between Cyberchondria and Health Anxiety and the Moderating Role of Health Literacy among the Pakistani Public. International Journal of Environmental Research and Public Health. https://doi.org/10.3390/ijerph21091168</p>
+<p>Purwanto Purwanto, Dedy Ansari Harahap, Dita Amanah, &amp; Muji Gunarto. (2021). Beban Infomasi Media Sosial Dan Niat Melakukan Isolasi Mandiri serta Panic Buying Selama Pandemi Covid 19. Jurnal Manajemen. https://doi.org/10.32832/jm-uika.v12i2.4327</p>
+<p>Qing Huang, Sihan Lei, &amp; Binbin Ni. (2022). Perceived Information Overload and Unverified Information Sharing on WeChat Amid the COVID-19 Pandemic: A Moderated Mediation Model of Anxiety and Perceived Herd. Frontiers in Psychology. https://doi.org/10.3389/fpsyg.2022.837820</p>
+<p>Rahul Varma, &amp; Tushar Singh. (2023). Cyberchondria and health: Exploring the linkages. Mind and Society. https://doi.org/10.56011/mind-mri-122-20233</p>
+<p>Rahul Varma, Sreeja Das, &amp; Tushar Singh. (2021). Cyberchondria Amidst COVID-19 Pandemic: Challenges and Management Strategies. Frontiers in Psychiatry. https://doi.org/10.3389/fpsyt.2021.618508</p>
+<p>Raziye Şavkın, İzgi Güven, &amp; Ni̇hal Büker. (2022). Health Literacy and Cyberchondria Levels in Healthcare Workers and Their Relationship with Body Awareness and Physical Activity. Medical Bulletin of Haseki. https://doi.org/10.4274/haseki.galenos.2022.8258</p>
+<p>Renu Bala, Amit Srivastava, Gouri Devi Ningthoujam, Thadoi Potsangbam, Amita Oinam, &amp; Lily Anal. (2020). An Observational Study in Manipur State, India on Preventive Behavior Influenced by Social Media During the COVID-19 Pandemic Mediated by Cyberchondria and Information Overload. Journal of Preventive Medicine and Public Health. https://doi.org/10.3961/jpmph.20.465</p>
+<p>Reynold Padagas, Butch Stephen Duay, &amp; Jill Dalisay. (2022). Cyberchondria among Filipino teacher education students. International Journal of Evaluation and Research in Education (IJERE). https://doi.org/10.11591/ijere.v11i3.22287</p>
+<p>Richard Huan Xu, &amp; C.-S. Chen. (2024). Moderating Effect of Coping Strategies on the Association Between the Infodemic-Driven Overuse of Health Care Services and Cyberchondria and Anxiety: Partial Least Squares Structural Equation Modeling Study. Journal of Medical Internet Research. https://doi.org/10.2196/53417</p>
+<p>Richard Huan Xu, Xiao Liang, &amp; Vladan Starčević. (2025). Exploring the Relationship Between Cyberchondria and Suicidal Ideation: Cross-Sectional Mediation Analysis. Journal of Medical Internet Research. https://doi.org/10.2196/72414</p>
+<p>Riffat Shahani, Fahad Asmi, Jin Ma, Asma Zawar, Olayemi Hafeez Rufai, Sayibu Muhideen, Tunde Simeon Amosun, &amp; Jianxun Chu. (2023). How cyberchondria and decision self-efficacy shapes the acceptability of COVID-19 vaccine: A gender-based comparison. Digital Health. https://doi.org/10.1177/20552076231185430</p>
+<p>Rodrigo Robles-Mariños, Germán F. Alvarado, Jorge L. Maguiña, &amp; Juan Carlos Bazo‐Alvarez. (2023). The short-form of the Cyberchondria Severity Scale (CSS-12): Adaptation and validation of the Spanish version in young Peruvian students. PLoS ONE. https://doi.org/10.1371/journal.pone.0292459</p>
+<p>Roro Isyawati Permata Ganggi. (2020). Information Anxieties and Information Distrust: The effects of Overload Information about COVID – 19. E3S Web of Conferences. https://doi.org/10.1051/e3sconf/202020215014</p>
+<p>Saba Batool Wadhar, Riffat Shahani, Rongting Zhou, Ahmad Nabeel Siddiquei, Qing Ye, &amp; Fahad Asmi. (2023). What Factors Will Influence Chinese International Traveling for Leisure in the Post-COVID-19 Era: Role of Health Priorities and Health-Related Information Literacy. Healthcare. https://doi.org/10.3390/healthcare11030315</p>
+<p>Sabeen Sabir, &amp; Irum Naqvi. (2023). Prevalence of cyberchondria among university students: an emerging challenge of the 21st century. Journal of the Pakistan Medical Association. https://doi.org/10.47391/jpma.7771</p>
+<p>Safaa M. El-Zoghby, Nancy Zaghloul, Ayat Mahmoud Tawfik, Noura M. Elsherbiny, Shaimaa A. Shehata, &amp; Enayat M. Soltan. (2024). Cyberchondria and smartphone addiction: A correlation survey among undergraduate medical students in Egypt. Journal of the Egyptian Public Health Association. https://doi.org/10.1186/s42506-024-00154-y</p>
+<p>Sahiti Myneni. (2013). Attributing Meaning to Online Social Network Analysis for Tailored Socio-Behavioral Support Systems. DigtalCommons @ Texas Medical Center Library (Texas Medical Center).</p>
+<p>Saira Hanif Soroya, &amp; Anthony Faiola. (2023). Why did people avoid information during the COVID-19 pandemic? Understanding information sources' dynamics among Pakistani Z generation. Library Hi Tech. https://doi.org/10.1108/lht-02-2022-0113</p>
+<p>Saira Hanif Soroya, Ali Farooq, Khalid Mahmood, Jouni Isoaho, &amp; Shan-e Zara. (2020). From information seeking to information avoidance: Understanding the health information behavior during a global health crisis. Information Processing &amp; Management. https://doi.org/10.1016/j.ipm.2020.102440</p>
+<p>Samar J. Melhem, Shereen Nabhani‐Gebara, &amp; Reem Kayyali. (2024). Evaluating online health information utilisation and its psychosocial implications among breast cancer survivors: Qualitative explorations. Health Promotion Perspectives. https://doi.org/10.34172/hpp.42682</p>
+<p>Sameera Ahmed. (2020). Managing News Overload (MNO): The COVID-19 Infodemic. Information. https://doi.org/10.3390/info11080375</p>
+<p>Sami Al‐Rawashdeh, Majd T. Mrayyan, Abdallah Abu Khait, &amp; Majdi Rababa. (2022). Differences in Cyberchondria, Internet Addiction, Anxiety Sensitivity, Health Anxiety, and Coronavirus Anxiety Among Students: A Web-Based Comparative Survey. Electronic Journal of General Medicine. https://doi.org/10.29333/ejgm/11876</p>
+<p>Samira Saad Ali, Nourhan Essam Hendawi, Ayman Mohamed El‐Ashry, &amp; Manal Saeed Mohammed. (2024). The relationship between cyberchondria and health literacy among first-year nursing students: the mediating effect of health anxiety. BMC Nursing. https://doi.org/10.1186/s12912-024-02396-9</p>
+<p>Samuli Laato, A. K. M. Najmul Islam, Muhammad Nazrul Islam, &amp; Eoin Whelan. (2020). What drives unverified information sharing and cyberchondria during the COVID-19 pandemic?. arXiv (Cornell University). https://doi.org/10.1080/0960085x.2020.1770632</p>
+<p>Samuli Laato, A.K.M. Najmul Islam, Ali Farooq, &amp; Amandeep Dhir. (2020). Unusual purchasing behavior during the early stages of the COVID-19 pandemic: The stimulus-organism-response approach. Journal of Retailing and Consumer Services. https://doi.org/10.1016/j.jretconser.2020.102224</p>
+<p>Sancia West, Rachel Kornhaber, Denis Visentin, Deependra Kaji Thapa, &amp; Michelle Cleary. (2020). The role of the health professional supporting consumers who use ‘Dr Google’. Journal of Advanced Nursing. https://doi.org/10.1111/jan.14419</p>
+<p>Santiago Hors-Fraile, Math J. J. M. Candel, Francine Schneider, Shwetambara Malwade, Francisco J. Núñez-Benjumea, Shabbir Syed-Abdul, Luis Fernández-Luque, &amp; Hein de Vries. (2022). Applying Collective Intelligence in Health Recommender Systems for Smoking Cessation: A Comparison Trial. Electronics. https://doi.org/10.3390/electronics11081219</p>
+<p>Shengyingjie Liu, Huai Yang, Min Cheng, &amp; Tianchang Miao. (2022). Family Dysfunction and Cyberchondria among Chinese Adolescents: A Moderated Mediation Model. International Journal of Environmental Research and Public Health. https://doi.org/10.3390/ijerph19159716</p>
+<p>Shuanghu Fang, &amp; Iqra Mushtaque. (2024). The Moderating Role of Health Literacy and Health Promoting Behavior in the Relationship Among Health Anxiety, Emotional Regulation, and Cyberchondria. Psychology Research and Behavior Management. https://doi.org/10.2147/prbm.s446448</p>
+<p>Simon Jones, &amp; Ryan Kelly. (2017). Dealing With Information Overload in Multifaceted Personal Informatics Systems. Human-Computer Interaction. https://doi.org/10.1080/07370024.2017.1302334</p>
+<p>Simon Manyiwa, &amp; Ross Brennan. (2012). Fear appeals in anti-smoking advertising: How important is self-efficacy?. University of Hertfordshire Research Archive (University of Hertfordshire). https://doi.org/10.1080/0267257x.2012.715092</p>
+<p>Stella Lee. (2017). The Message as a Seed: Predicting the Diffusion of Anti-Smoking Arguments from Message Construal. ScholarlyCommons (University of Pennsylvania).</p>
+<p>Stylianos Arsenakis, Anne Chatton, Louise Penzenstadler, Joël Billieux, David Berle, Vladan Starčević, Kirupamani Viswasam, &amp; Yasser Khazaal. (2021). Unveiling the relationships between cyberchondria and psychopathological symptoms. Journal of Psychiatric Research. https://doi.org/10.1016/j.jpsychires.2021.09.014</p>
+<p>Süleyman Utku Uzun, &amp; Mehmet Zencir. (2022). CYBERCHONDRIA AND ASSOCIATED FACTORS AMONG UNIVERSITY STAFF. Eskişehir Türk Dünyası Uygulama ve Araştırma Merkezi Halk Sağlığı Dergisi. https://doi.org/10.35232/estudamhsd.1027589</p>
+<p>Tanja Staraj Bajčić, Iva Sorta-Bilajac Turina, Marko Lucijanić, Tamara Sinožić, Mirela Vučković, &amp; Ksenija Baždarić. (2024). Cyberchondria, Health Literacy, and Perception of Risk in Croatian Patients with Risk of Sexually Transmitted Infections and HIV—A Cross-Sectional Study. Epidemiologia. https://doi.org/10.3390/epidemiologia5030036</p>
+<p>Tao Zhou, &amp; Songtao Li. (2024). Understanding user switch of information seeking: From search engines to generative AI. Journal of Librarianship and Information Science. https://doi.org/10.1177/09610006241244800</p>
+<p>Tian Xie, Yangyang Wang, &amp; Yali Cheng. (2023). Social Media Overload as a Predictor of Depressive Symptoms Under the COVID-19 Infodemic: A Cross-Sectional Survey From Chinese University Students. International Journal of Public Health. https://doi.org/10.3389/ijph.2023.1606404</p>
+<p>Tuğba Türk Kurtça. (2025). Generalized anxiety disorder and social media addiction relationships: The role of psychological resilience, doomscrolling and cyberchondria severity. Psihologija. https://doi.org/10.2298/psi230921004t</p>
+<p>Unknown author. (1984). Stress, Appraisal, and Coping.</p>
+<p>Unknown author. (2001). Communication and Uncertainty Management. https://doi.org/10.1111/j.1460-2466.2001.tb02892.x</p>
+<p>Unknown author. (2019). The Interaction of Person-Affect-Cognition-Execution (I-PACE) model for addictive behaviors: Update, generalization to addictive behaviors beyond internet-use disorders, and specification of the process character of addictive behaviors. https://doi.org/10.1016/j.neubiorev.2019.06.032</p>
+<p>Vladan Starčević, &amp; Elias Aboujaoude. (2015). Cyberchondria, cyberbullying, cybersuicide, cybersex: “new” psychopathologies for the 21st century?. World Psychiatry. https://doi.org/10.1002/wps.20195</p>
+<p>Vladan Starčević, Adriano Schimmenti, Joël Billieux, &amp; David Berle. (2020). Cyberchondria in the time of the &lt;scp&gt;COVID&lt;/scp&gt; ‐19 pandemic. Human Behavior and Emerging Technologies. https://doi.org/10.1002/hbe2.233</p>
+<p>Vladan Starčević. (2023). Keeping Dr. Google under control: how to prevent and manage cyberchondria. World Psychiatry. https://doi.org/10.1002/wps.21076</p>
+<p>Włodzimierz Oniszczenko. (2021). Anxious temperament and cyberchondria as mediated by fear of COVID-19 infection: A cross-sectional study. PLoS ONE. https://doi.org/10.1371/journal.pone.0255750</p>
+<p>Włodzimierz Oniszczenko. (2022). Age, COVID-19-related fear, insomnia symptoms and cyberchondria: a mediation model. Neuropsychiatria i Neuropsychologia. https://doi.org/10.5114/nan.2022.124695</p>
+<p>Xi Chen, Fen Lin, &amp; Edmund W. Cheng. (2021). Stratified Impacts of the Infodemic During the COVID-19 Pandemic: Cross-sectional Survey in 6 Asian Jurisdictions. Journal of Medical Internet Research. https://doi.org/10.2196/31088</p>
+<p>Xiaoqing Peng, Yang Chen, Yichuan Zhang, Fei Liu, Haiyan He, Ting Luo, Pingping Dai, Wenzhao Xie, &amp; Aijing Luo. (2021). The Status and Influencing Factors of Cyberchondria During the COVID-19 Epidemic. A Cross-Sectional Study in Nanyang City of China. Frontiers in Psychology. https://doi.org/10.3389/fpsyg.2021.712703</p>
+<p>Xinmiao Zhang, Han Zheng, Yueliang Zeng, Jiayi Zou, &amp; Zhao Lin. (2024). Exploring how health-related advertising interference contributes to the development of cyberchondria: A stressor–strain–outcome approach. Digital Health. https://doi.org/10.1177/20552076241233138</p>
+<p>Xue Wu, Nabi Nazari, &amp; Mark D. Griffiths. (2021). Using Fear and Anxiety Related to COVID-19 to Predict Cyberchondria: Cross-sectional Survey Study. Journal of Medical Internet Research. https://doi.org/10.2196/26285</p>
+<p>Xuqing Bai, Shuai-Lei Lian, Xiaojun Sun, Gengfeng Niu, &amp; J. Liu. (2025). The relationship between information hoarding and selective exposure: the role of information overload, identity bubble reinforcement, and intolerance of uncertainty. BMC Psychology. https://doi.org/10.1186/s40359-025-03062-8</p>
+<p>Yavuz Selvı, Seda Gökçe Turan, A.A. Sayin, Murat Boysan, &amp; Ali Kandeğer. (2018). The Cyberchondria Severity Scale (CSS): Validity and Reliability Study of the Turkish Version. Sleep and Hypnosis. https://doi.org/10.5350/sleep.hypn.2018.20.0157</p>
+<p>Yi Zhou, Lisha Dai, Deng Yun-long, Hongling Zeng, &amp; Lifeng Yang. (2022). The moderating effect of alexithymia on the relationship between stress and cyberchondria. Frontiers in Psychiatry. https://doi.org/10.3389/fpsyt.2022.1043521</p>
+<p>Yifang Wu, Luxi Zhang, &amp; Xinshu Zhao. (2025). Linking online health information seeking to cancer information overload among Chinese cancer patients’ family members. Digital Health. https://doi.org/10.1177/20552076251336308</p>
+<p>Yu Guo, Yuxuan Wang, &amp; Yiwei Li. (2024). Online Health Information Seeking and Cyberchondria Among Men at Risk of HIV Infection: A Moderated Mediation Model. PubMed Central. https://doi.org/10.1080/19317611.2024.2444590</p>
+<p>Yu Guo, Yuxuan Wang, &amp; Yiwei Li. (2024). Online health information seeking, health anxiety and cyberchondria among men who engage in sexual risk taking: The mediating role of medical consultation about &lt;scp&gt;HIV&lt;/scp&gt; / &lt;scp&gt;AIDS&lt;/scp&gt;. Journal of Community &amp; Applied Social Psychology. https://doi.org/10.1002/casp.2845</p>
+<p>Z C Jiang, Gaohui Cao, Reima Suomi, &amp; Daolin Zha. (2024). Health anxiety and related factors among the rural population: A cross-sectional study in China. Journal of Health Psychology. https://doi.org/10.1177/13591053241301201</p>
+<p>Zeynep Gizem Ergün Özdel, Güven Özkaya, &amp; Şenay Türe. (2025). Parental health information seeking online: How cyberchondria and health literacy shape pediatric health decisions. Archivos Argentinos de Pediatria. https://doi.org/10.5546/aap.2025-10771.eng</p>
+<p>Özlem Üzüm, Gülberat Ince, Kayı Eliaçık, Ali Kanık, Ferhan Elmali, &amp; Mehmet Helvacı. (2023). Investigating the Potential Connection Between Cyberchondria and Vaccine Hesitancy in High School Students. Cureus. https://doi.org/10.7759/cureus.34218</p>
+<p>А.А. Золотарева. (2022). Cyberchondria, but not preventive behavior, mediates the relationship between fear of COVID-19 and somatic burden: Evidence from Russia. Frontiers in Psychiatry. https://doi.org/10.3389/fpsyt.2022.1018659</p>
+<p>世界卫生组织. (2023). Highlighting a population’s health information needs during health emergencies through new infodemic management tools and frameworks. https://www.who.int/news/item/13-04-2023-highlighting-a-population-s-health-information-needs-during-health-emergencies-through-new-infodemic-management-tools-and-frameworks. 检索日期：2026-07-15。</p>
+<p>世界卫生组织. (2024). The COVID-19 infodemic. https://www.who.int/health-topics/infodemic/the-covid-19-infodemic. 检索日期：2026-07-15。</p>
+<p>世界卫生组织. (2025). Tobacco. https://www.who.int/news-room/fact-sheets/detail/tobacco. 检索日期：2026-07-15。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+</article>
+      </details>
+      <details class="demo-shell" id="demo-review">
+        <summary><span data-lang="zh">展开：系统综述（证据提示版，未验证草稿）</span><span data-lang="en">Expand: Systematic review (evidence-aware version, unvalidated draft)</span></summary>
+        <div class="demo-meta"><span data-lang="zh">完整静态内容：51个正文段落、13个标题＋177条参考文献；已移除原Demo的工具栏、脚本和导出按钮。</span><span data-lang="en">Complete static content: 51 body paragraphs, 13 headings, and 177 references; the source toolbar, scripts, and export buttons were removed.</span></div>
+        <article class="demo-paper" data-demo="review-evidence-aware-draft" data-source-sha256="a398a88063c9e501ff70b65217b009d768e4b512d6d454cf08956a80c2693650">
+<div class="demo-body">
+<h1 id="demo-review-h1">信息超载、网络疑病症与戒烟意向：心理机制、信息级联边界与研究设计的系统性综述</h1>
+<h2 id="demo-review-h2">研究范围、概念边界与证据结构</h2>
+<p>信息超载指信息的数量、复杂性、矛盾性或处理要求超过个体当时可用的认知与评价资源；网络疑病症则指在线健康搜索未能稳定缓解担忧，反而伴随搜索升级、反复确认、痛苦或功能干扰的过程。二者都涉及“信息—认知—情绪—行为”，但不能据此视为同一构念。前者首先描述信息环境与处理失配，后者首先描述健康焦虑背景下的问题性搜索循环。有关网络疑病症的概念综述、临床管理讨论和早期疫情研究共同支持这种边界划分 (Starčević &amp; Aboujaoude, 2015; Starčević et al., 2020; Starčević, 2023; Varma et al., 2021; Varma &amp; Singh, 2023)。</p>
+<p>量表开发、跨文化验证、流行状况与综述研究为构念边界提供了基础 (McElroy et al., 2019; Selvı et al., 2018; Wang et al., 2023; Robles-Mariños et al., 2023; Miezah et al., 2026)；学生、大学职员及不同社会人群的研究则显示样本组成会显著影响所得分布 (Sabir &amp; Naqvi, 2023; Mrayyan et al., 2023; Padagas et al., 2022; Uzun &amp; Zencir, 2022; Abdulrahman et al., 2024)。</p>
+<p>471篇整合记录的NMF分析形成四个通过收敛、多随机种子和重抽样门槛的结构信号，大致覆盖网络疑病症测量与易感性、健康信息超载与应对、数字健康信息与素养、以及戒烟干预与社会影响。这些结构用于检查材料覆盖与章节间关系，正文仍按“负荷—搜索循环—戒烟决策—社会边界”的解释链组织，不机械复制计量分组。</p>
+<h2 id="demo-review-h3">两个研究传统的形成与交汇</h2>
+<p>信息超载研究长期关注信息供给增长与有限处理能力之间的失配，随后延伸至新闻过载、社交媒体负荷、信息焦虑、信息疲劳和信息回避 (Ahmed, 2020; Tyrväinen et al., 2025; Soroya &amp; Faiola, 2023; Skulmowski &amp; Standl, 2021)。公共卫生危机使信息量、威胁性、时效要求和来源竞争同时上升，因而成为观察信息过载的高强度情境。疫情期间的信息来源、信息地平线、新闻过载和信息回避研究显示，人们不是简单地“搜索更多”，而是在搜索、过滤、回避和渠道转换之间调整 (Soroya et al., 2020; Zimmerman, 2021; Ahmed, 2020; Soroya &amp; Faiola, 2023; Skulmowski &amp; Standl, 2021)。</p>
+<p>网络疑病症研究则从概念辨析和量表测量逐步转向个体易感性、心理后果及行为管理 (Starčević &amp; Aboujaoude, 2015; McElroy et al., 2019; Yang &amp; Xu, 2025)。疫情研究显著扩大了样本和情境覆盖，但也使网络疑病症与新冠恐惧、信息疫情和临时性封控行为高度缠绕 (Starčević et al., 2020; Peng et al., 2021; Vismara et al., 2021; Kurçer et al., 2021)。学生、一般人口和不同职业群体的研究普遍观察到网络疑病症与健康焦虑或心理困扰共变，但研究设计大多不能确定时间方向 (Shailaja et al., 2020; Peng et al., 2021; Vismara et al., 2021; Kurçer et al., 2021; Infanti et al., 2023)。</p>
+<p>两个传统的交汇并非仅由文献数量增长造成，而是因为健康搜索具有特殊的反馈结构：搜索者面对的是与自身身体和生命风险有关的信息，信息不足会推动继续搜索，信息过多、矛盾或难以评价又可能扩大不确定性 (Starčević, 2023; Starčević &amp; Aboujaoude, 2015; Zheng &amp; Jiang, 2022)。直接交叉研究已经把信息超载、网络疑病症、威胁评价、应对评价和行为意向置于同一模型，但现有横断面路径仍是竞争解释而非确定因果链 (Laato et al., 2020; Laato et al., 2020; Farooq et al., 2020; Bala et al., 2020; Zheng &amp; Jiang, 2022)。</p>
+<h2 id="demo-review-h4">信息超载研究流：从信息环境到认知与情绪负担</h2>
+<p>信息超载不能只按消息条数定义。社交媒体的可供性、并行任务、信息更新速度和来源分散会改变处理要求；个体的多任务自我效能与搜索工具则改变可用资源。相关研究分别考察了社交媒体可供性、过载与疲劳、新闻管理、检索过滤和长期信息回避，说明“输入规模—处理能力—应对方式”必须同时测量 (Huang et al., 2022; Islam et al., 2020; Tyrväinen et al., 2025; Mahdi et al., 2020; Metag &amp; Gurr, 2022)。</p>
+<p>健康信息尤其需要区分数量、矛盾性、模糊性与可信度。医疗错误信息和健康信息疫情材料显示，来源质量与验证困难会把信息丰富转化为信息负担 (Yeung et al., 2021)；信息丰裕还可能与未核实分享、选择性接触和虚假信息传播相连 (Guo et al., 2023; Vintilă et al., 2023; Bai et al., 2025; Zheng et al., 2021)。因此，若只测量“信息太多”，就无法判断焦虑来自数量阈值、内容冲突，还是对来源缺乏信任。</p>
+<p>超载后的反应也并不单一。部分个体继续搜索，部分个体转向回避，还有人通过渠道切换、筛选工具或社会确认降低负担。医护人员、老年人、初为人母者和个人信息学用户的研究分别揭示专业决策压力、错误信息识别、生活转型需求和自动过滤需求 (Sbaffi et al., 2020; Vivion et al., 2024; Loudon et al., 2015; Jones &amp; Kelly, 2017; Jia &amp; Li, 2024)。这些差异提示，搜索坚持与搜索回避应被视为可能共享前因但产生不同后果的应对路径。</p>
+<p>情绪是信息负荷转化为行为的重要环节，但一般焦虑、信息焦虑、健康焦虑与心理困扰不能混用。研究把信息超载与信息焦虑、社会媒体疲劳、抑郁症状及心理困扰联系起来，也出现特定信息来源与较低心理症状相关的结果 (Soroya &amp; Faiola, 2023; Li et al., 2023; Xie et al., 2023; Guo et al., 2021; Ganggi, 2020)。这意味着信息来源、使用目的和既有脆弱性可能改变方向，不能将所有负面情绪归为同一中间环节。</p>
+<p>一般领域材料还涉及购物、工作技术负荷、旅游风险与学习生活，能够帮助识别处理能力和情境压力，却不能直接证明健康搜索中的网络疑病机制 (Kusi et al., 2022; Ingusci et al., 2021; Wadhar et al., 2023; Al-Kumaim et al., 2021; Hartog, 2017)。它们适合提供竞争解释和适用边界，而不是补足直接关系的数量。</p>
+<h2 id="demo-review-h5">网络疑病症研究流：测量、前因与心理后果</h2>
+<p>网络疑病症测量从较长的多维CSS逐步发展到CSS-12及跨语言版本，研究通常关注过度搜索、强迫、痛苦、反复确认和对医疗专业人员的不信任 (McElroy et al., 2019; Selvı et al., 2018; Robles-Mariños et al., 2023)。不同版本并非完全保留相同维度，说明总分相近并不保证心理内容相同 (McElroy et al., 2019; Selvı et al., 2018; Wang et al., 2023; Robles-Mariños et al., 2023; Barke &amp; Doering, 2020)。测量研究还显示，网络疑病症需与一般网络使用、智能手机依赖和健康焦虑保持判别效度 (El-Zoghby et al., 2024; Vujić et al., 2023; Müller et al., 2021; Bagarić &amp; Jokić‐Begić, 2019; Ciułkowicz et al., 2022)。</p>
+<p>健康焦虑是最稳定的相关因素，但其角色并不固定 (Bajcar &amp; Babiak, 2019; Sansakorn et al., 2024; Guo et al., 2024; Arsenakis et al., 2021)。部分模型将健康焦虑设为网络疑病症的前因，部分研究把它放在家庭功能、自尊或健康素养与网络疑病症之间，也有研究把在线搜索后的焦虑升级视为网络疑病症本身的一部分 (Bajcar &amp; Babiak, 2019; Liu et al., 2022; Sansakorn et al., 2024; Ali et al., 2024; Fang &amp; Mushtaque, 2024)。这种角色漂移容易形成循环论证：用健康焦虑解释网络疑病症，再用网络疑病症定义搜索后的健康焦虑。</p>
+<p>不确定性不耐受、焦虑敏感性、元认知信念和递归思维提供了更细的个体差异解释。不确定性不耐受可使一次搜索难以形成停止标准；焦虑敏感性使身体和情绪线索更易被解释为危险；元认知信念则可能维持“继续搜索才能安心”的规则 (Mento et al., 2022; Rashid et al., 2023; Fadila &amp; Dwatra, 2024; Nasiri et al., 2023; Zheng et al., 2020)。然而，多数证据仍来自同期自报关联或统计中介，不能直接证明这些变量按模型所设顺序发生 (Zheng et al., 2020; Liu et al., 2022; Bajcar &amp; Babiak, 2019)。</p>
+<p>人格、家庭与情绪调节研究进一步扩展了易感性来源 (Cuesta et al., 2019; Liu et al., 2022; Zhou et al., 2022; Nasiri et al., 2023)。焦虑气质、人格特征、家庭功能失调、压力、述情障碍和自尊均被置于不同模型中 (Cuesta et al., 2019; Oniszczenko, 2021; Zhou et al., 2022; Al‐Rawashdeh et al., 2022; Polat et al., 2022)。这些因素可能是远端脆弱性，也可能与一般心理困扰共同反映，因此应比较其对健康特异性过程的增量解释，而非不断叠加预测变量。</p>
+<h2 id="demo-review-h6">信息超载如何进入网络疑病症的循环机制</h2>
+<p>压力评价与应对模型适合解释信息环境如何经过威胁、资源和可控性评价形成不同应对；不确定性管理理论进一步指出，人们并不总是追求最小不确定性，而会根据可承受程度选择搜寻、回避或委托；I-PACE则可作为重复在线行为逐渐强化的过程框架。三者分别承担总体评价、信息管理和行为循环的角色，不能简单堆叠 (Lazarus &amp; Folkman, 1984; Brashers, 2001; Brand et al., 2019)。</p>
+<p>据此可以提出一个递归过程：高负荷、矛盾或侵扰性健康信息首先提高处理困难和威胁评价 (Lazarus &amp; Folkman, 1984; Li et al., 2023)；健康焦虑与不确定性不耐受使个体更难停止搜索 (Brashers, 2001)；短期确认可能暂时缓解不安，却增加新信息暴露和异常线索，从而在更长时间尺度上放大焦虑 (Brand et al., 2019)。广告干扰、疫苗信息暴露、线上健康搜寻和疫情恐惧研究分别覆盖该循环的不同片段 (Zhang et al., 2024; Zheng &amp; Jiang, 2022; Guo et al., 2024; Золотарева, 2022; Bagarić &amp; Jokić‐Begić, 2022)。信息超载经威胁评价与网络疑病症关联的模型进一步支持把超载放在反馈链中检验，而不是预设单向结果 (Li et al., 2023)。</p>
+<p>但这并非唯一解释。在线健康搜索在癌症患者家属中可能与较低信息超载相连，说明有效搜索也可改善信息匹配 (Wu et al., 2025)。一般搜索引擎、专业医疗平台和搜索时长对网络疑病症的关系并不相同 (Peng et al., 2021)。因此，真正需要检验的不是“搜索是否有害”，而是何种信息结构、搜索策略和停止规则使搜索从问题解决转向无效确认。</p>
+<p>进一步区分超载类型有助于明确这一转折。信息超载对应内容数量、复杂性与处理资源失配；沟通超载对应消息、提醒和互动频率超过回应能力；社交超载则对应他人的支持请求、关系维护与社会性要求超过可承担范围。两波职业样本研究发现，信息超载与沟通超载均可关联社交媒体疲劳，但其前因和自我效能边界并不相同 (Islam et al., 2020)。疫情样本中，三类超载对疲劳和停用意向的关系并不一致 (Elciyar, 2021)；信息超载与沟通超载也分别经风险感知和疲劳关联抑郁症状 (Xie et al., 2023)。在网络疑病症研究中，感知信息超载与感知沟通超载已被识别为若干网络疑病症组态中的核心条件，但该研究并未检验社交超载，也不能把组态充分性改写为单变量净效应 (Wang et al., 2024)。因此，将三类超载合并为单一总分会掩盖它们可能通过认知负荷、互动压力和关系义务进入网络疑病症的不同路径。</p>
+<p>将网络疑病症连接到戒烟意向时，首先需要区分“威胁显著性提高”与“可行应对方案形成”。图形警示实验显示，更强的图形描绘可通过恐惧提高戒烟意向 (Kees et al., 2010)；个性化血管图像的试验则把易感性提高与戒烟意向联系起来，但该关系取决于戒烟自我效能 (Shahab et al., 2007)。反向证据同样重要：自我效能虽与戒烟意向正相关，但也可经降低风险感知间接削弱意向 (Poggiolini, 2019)；六国时间序列也没有发现图形警示后戒烟搜索的一致持续上升 (Kunst et al., 2019)。因此，网络疑病症所包含的疾病威胁放大可能提高戒烟动机，也可能在缺乏效能信息时转化为回避、无助感或无效搜索；这两种竞争路径尚未被同一设计区分。</p>
+<p>信息级联描述个体在自身信息不充分时，依据他人的选择、转发、评价或可见流行度进行判断的社会扩散过程。在戒烟情境中，反吸烟论据的复制与延展可被实验研究 (Lee, 2017)；QuitNet的内容—网络分析识别了与戒烟支持有关的意见领袖和主题网络 (Myneni, 2013)；Facebook戒烟干预中，分享、点击、评论及不同反应与传播范围的关联并不相同 (Pócs et al., 2021)。这些研究支持将级联线索操作化为可见的采纳、转发速度、累积反应和发布者网络位置，却不能证明它们会自动增强戒烟意向。</p>
+<p>“正向调节”尤其需要与竞争证据对照。在JUUL用户中，描述性规范并未成为摘要所报告的独立显著预测因素，感知行为控制才是关键预测因素 (Hester, 2020)。集体智能推荐系统也没有在总体戒断结果上超过知识规则系统，只在完善个人资料的参与者中带来更多戒烟尝试 (Hors-Fraile et al., 2022)。游戏化mHealth的纵向质性研究甚至报告外部社会影响可能抑制参与 (El-Hilly et al., 2016)。因此，本综述将“信息级联增强网络疑病症对戒烟意向的影响”界定为需要验证的方向性假设，其成立条件至少包括级联内容指向戒烟、线索来源可信、参照群体相关，且个体拥有足够的戒烟自我效能。</p>
+<h2 id="demo-review-h7">信息质量、渠道与数字健康素养的边界作用</h2>
+<p>渠道并非中性的传输管道。传统媒体、社交媒体、搜索引擎、专业医疗平台和生成式人工智能在来源可见性、排序逻辑、交互反馈与重复暴露上不同。疫情期间的渠道偏好、预防行为和信息来源研究显示，使用某种渠道本身不足以判断结果，必须同时考察内容质量和使用目的 (Bahadir &amp; Dündar, 2024; Farooq et al., 2021; Zimmerman, 2021; Guo et al., 2021; Chen et al., 2021)。</p>
+<p>线上健康咨询和线下医疗咨询也应分开。早期互联网健康信息研究已经显示，接入在线信息既可能激活患者角色，也可能因能力、信任与专业关系而产生排斥或回避 (Henwood et al., 2002)。线上咨询可能参与在线搜寻与网络疑病症之间的关系，而线下咨询未呈现相同模式 (Guo et al., 2024)；医护人员则需要在纠正错误信息和避免否定患者体验之间取得平衡 (West et al., 2020; Wangler &amp; Janský, 2020; Eichenberg &amp; Schott, 2019; Melhem et al., 2024)。这说明“寻求专业帮助”包含不同可及性、反馈速度和确认功能。</p>
+<p>eHealth素养通常被设为保护因素，但素养不只是查找能力，还包括评价、整合和应用。量表开发、护理人员信息焦虑、学生与患者研究表明，信息评价能力、健康焦虑和风险感知相互交织 (Marsall et al., 2021; Zhao et al., 2024; Aslan &amp; Koca, 2025; Çol et al., 2025; Bajčić et al., 2024)。高搜索能力若缺少停止规则和可信来源，甚至可能增加暴露；因此，素养的保护作用应被视为渠道和任务条件下的假设，而非恒定主效应。</p>
+<p>信息服务正在从搜索引擎向生成式人工智能扩展。比较搜索过载、AI可信度和渠道转换的研究提示，新工具可能降低检索成本，却同时引入来源不透明、答案过度确定和验证依赖 (Lim &amp; Hong, 2025; Zhou &amp; Li, 2024; Babu, 2025; Yan, 2025; Ghalavand et al., 2025)。后续工作需要把“答案更容易获得”与“来源更容易评价”分开。</p>
+<h2 id="demo-review-h8">个体差异、社会情境与人群异质性</h2>
+<p>相同信息环境不会产生相同反应。年龄、既往疾病、健康风险、社会支持、心理韧性和家庭环境都会改变威胁评价及应对资源。农村居民、孕妇、青少年、大学生和医疗相关人群的研究展现了明显的人群异质性 (Jiang et al., 2024; Šoštarić et al., 2023; Liu et al., 2022; Rashid et al., 2023; Şavkın et al., 2022)。因此，人口变量应服务于理论边界，而不应仅作为控制变量列表。</p>
+<p>一般焦虑与健康焦虑尤其需要分开。一般焦虑在部分多变量模型中失去独立预测力，而健康焦虑通常保持更强关联；压力、抑郁和强迫症状则可能是共同脆弱性或后果 (Wu et al., 2021; Arsenakis et al., 2021; Gupte, 2024; Polat et al., 2022; Ciułkowicz et al., 2022)。广泛性焦虑、社交媒体依赖与心理韧性研究也提示，一般数字压力路径必须与健康特异性路径进行增量比较 (Kurtça, 2025)。若不区分情绪对象和时间顺序，就会把健康特异性过程稀释为一般负性情绪。</p>
+
+<p>COVID-19材料还具有特殊的历史边界。疫情同时改变威胁、信息供给、医疗可及性和社会隔离，学生与便利样本占比也较高 (Xu &amp; Chen, 2024; Bazán et al., 2020; Kurçer et al., 2021; Shailaja et al., 2020; Vismara et al., 2021)。这些材料可揭示高威胁条件下的过程，却不能无条件外推至常态健康搜索。</p>
+<h2 id="demo-review-h9">从一般健康决策到戒烟意向与行为</h2>
+<p>网络疑病症的后果不仅是焦虑分数上升，还可能涉及生活质量、睡眠、幸福感和更严重的心理困扰。相关研究考察了教师幸福感、心理困扰与自杀意念、睡眠特征以及生活质量，但多数结果仍是横断面关联 (Karakaş et al., 2022; Xu et al., 2025; MAKSIMENKO et al., 2025; Yang &amp; Xu, 2025; Ciułkowicz et al., 2022)。因此，不能从相关关系推断网络疑病症单向造成这些结果 (Karakaş et al., 2022; Xu et al., 2025; MAKSIMENKO et al., 2025)。</p>
+<p>医疗与健康决策需要区分有益求医、反复确认和不恰当使用。mHealth信息超载与医疗服务过度使用、父母在线搜索与儿科决策、怀疑态度与医疗决策、医护人员应对“Dr Google”的研究表明，行为结果具有临床需要和情境依赖 (Zhong et al., 2024; Özdel et al., 2025; Abdulrahman et al., 2024; West et al., 2020; Wangler &amp; Janský, 2020)。更多咨询并不自动等于更差决策，关键在于咨询是否适当、重复，以及是否与焦虑性确认需求相关。</p>
+<p>公共卫生决策同样存在差异。网络疑病症被用于解释疫苗犹豫、疫苗接受、预防行为和自我隔离意向，也与疫情中的异常购买和信息分享相连 (Üzüm et al., 2023; Shahani et al., 2023; Farooq et al., 2020; Laato et al., 2020; Purwanto et al., 2021)。危机情境中的心理受损与购买反应研究说明，信息和焦虑还可能外溢至非医疗消费行为，但这类结果只能作为行为扩散边界，不能等同于网络疑病症后果 (Ghouri et al., 2024)。这些结果变量属于不同决策层次，不能合并为单一“行为意向”。</p>
+<p>真正的行为效度仍不充分。现有研究主要依赖同期自报，较少把网络疑病症量表与实际搜索轨迹、线上咨询、线下就医及医疗记录进行前瞻联结 (Guo et al., 2024; Zhong et al., 2024; West et al., 2020)。只有区分自报困扰、搜索频率、咨询发生和医疗适当性，才能判断网络疑病症是否带来可观察的服务负担。</p>
+<p>戒烟研究进一步表明，“戒烟意向”、“尝试戒烟”、“短期戒断”和“持续生化验证戒断”不能互换。早期互联网干预可能促进部分用户减烟或戒烟，却难以维持多数人的参与 (Lenert et al., 2003)。移动应用的观察性评估记录了部分用户的28日戒断，但作者明确建议通过随机试验进一步验证 (Ubhi et al., 2015)。相较之下，中国“WeChat WeQuit”随机试验对持续戒断进行了生化验证，发现结构化社交媒体干预能提高6个月戒断率 (Tang et al., 2023)。这些证据说明，从心理意向到真实行为的转化受干预结构、参与维持和时间尺度制约。</p>
+<p>更广泛的戒烟干预试验显示，催眠或放松、智能手机正念、成长思维、个性化网络支持及短信支持分别对应不同的行为改变机制和终点 (Dickson‐Spillmann et al., 2013; Garrison et al., 2015; Sridharan et al., 2019; Voncken-Brewster et al., 2015; Dale et al., 2015)。神经调控与药物联合、电子化干预、肺功能反馈、整合式戒烟服务及电子烟替代研究进一步说明，干预可行性、临床对象和随访时间会改变效果解释 (Ibrahim et al., 2023; Holliday et al., 2019; Fredj et al., 2022; Awaisu et al., 2011; Adriaens et al., 2014)。电子烟综述、动机访谈、经济激励、替代试验及肺功能反馈试验也表明，不同干预不能被合并为一个笼统的“戒烟信息效应” (Hartmann-Boyce et al., 2020; Brown et al., 2003; Halpern et al., 2015; Caponnetto et al., 2013; Kotz et al., 2009)。这些材料共同要求本研究把信息级联视为特定信息环境中的社会线索，而不是替代戒烟治疗、支持和效能资源的总括变量。</p>
+<p>在线戒烟社区提供了与信息级联相关、但必须加以区分的社会机制。Reddit戒烟社区研究将参与与向戒烟转变的态度和行为联系起来，而向他人提供支持是参与的重要动因 (De Santo et al., 2022)。戒烟在线健康社区中，情感与尊重支持与社区有用性相关，而有用性又与知识分享和持续使用意向相关 (Li et al., 2021)。社会连带与互惠性也能解释知识分享，但关系会随戒烟阶段变化 (Li et al., 2021)。社会支持、知识分享与级联线索可以同时出现，却是不同机制：前两者提供情感和工具资源，后者提供他人选择的可见信号。</p>
+<p>一般健康促进、在线健康信息信任、恐惧诉求、反电子烟传播以及青少年社会规范研究说明，风险信息只有在对象、来源与社会关系结构相匹配时才可能进入行为判断 (Parra-Calderón et al., 2011; Starling, 2016; Simpson, 2017; Skran, 2026; Hunter et al., 2020)。电子烟不平等、文化适配型说服、患者经验、在线健康社区语境和eHealth教练研究进一步强调，数字干预必须同时考虑文化、资源、对话意图与可执行性 (Adebisi, 2026; Khaled, 2008; Ziébland et al., 2016; Singh et al., 2023; Brandt et al., 2018)。健康传播、吸烟社会规范、同伴影响、戒电子烟社区和工作场所戒烟综合研究则提示，传播效果会随参照群体、网络结构、戒烟阶段和组织环境变化 (Fagbemi et al., 2023; Montes et al., 2023; Murray et al., 2025; Struik &amp; Yang, 2021; Carroll et al., 2013)。癌症情境的戒烟障碍、行为改变技术分类、反烟传播污名和青少年同伴选择研究还提醒，社会影响既可能提供行动资源，也可能产生污名、抵抗或选择同质性 (Wells et al., 2017; Michie et al., 2015; Riley et al., 2017; Murray et al., 2023)。因此，级联效应必须与支持质量、行为改变技术、群体选择和污名风险分别建模。</p>
+<p>因此，网络疑病症与戒烟意向之间至少存在三种竞争解释。威胁动机路径预期，对吸烟后果的反复搜索和担忧提高风险感知，从而增加戒烟意向 (Kees et al., 2010; Shahab et al., 2007)。无效应对路径则预期，当威胁信息超过处理能力且缺乏可行戒烟方案时，焦虑会转化为回避或反复确认。动机—能力路径则预期，风险感知只有与自我效能、感知行为控制和支持资源共同出现时，才更可能转为戒烟意向 (Manyiwa &amp; Brennan, 2012; Hester, 2020; Poggiolini, 2019)。这种竞争机制比简单假定“网络疑病症越高，戒烟意向越强”更具可检验性。</p>
+<h2 id="demo-review-h10">方法、测量与推断能力评估</h2>
+<p>材料构成以横断面调查、量表验证和路径模型为主，也包含质性访谈、纵向追踪、综述、元分析和少量干预。机器学习被用于识别预测变量，但预测性能不能回答变量是否造成网络疑病症 (Infanti et al., 2023)；中介和调节模型可以检验预设关系是否与数据一致，却不能在单时点数据中建立过程顺序 (Oniszczenko, 2022; Bajcar &amp; Babiak, 2019; Liu et al., 2022)。</p>
+<p>测量工作的首要任务是分离客观信息量、感知超载、搜索强度、确认行为、健康焦虑和功能损害。CSS及短版、父母过度搜索量表和eHealth素养量表为此提供工具 (McElroy et al., 2019; Barke &amp; Doering, 2020; Marsall et al., 2021)，但不同语言和人群仍需检验等值性，不能只比较总分。</p>
+<p>解释方向需要多波纵向、体验采样或准实验；信息属性需要在模拟或真实搜索界面中操纵数量、矛盾性、可信度和排序；行为效度需要在知情同意与隐私保护下联结搜索日志、咨询记录和医疗服务数据。方法选择应以研究问题为依据：潜变量模型服务于测量和理论路径，机器学习服务于样本外预测，组态方法只在目标确实关注多重充分路径时使用。方法的新颖性本身不构成学术贡献。</p>
+<p>针对“信息超载→网络疑病症→戒烟意向，信息级联调节后半段路径”的模型，首先要把网络疑病症与一般健康焦虑、搜索频率、对吸烟风险的感知及戒烟自我效能分开测量。随后可通过至少三波追踪检验时间顺序：先观察信息超载是否预测网络疑病症变化，再观察后者是否预测戒烟意向和实际尝试。若要识别级联的调节作用，更有辨识力的做法是在反吸烟信息界面中随机操纵他人采纳数、转发速度、评论一致性和来源可信度，同时操纵或测量效能信息，以区分社会证明、情感支持和单纯曝光量。形成性调节中介模型可用于检验假设，但只有时间顺序、操纵和行为结果才能提升因果解释。单次横断面问卷不足以证明中介过程或正向调节。</p>
+<h2 id="demo-review-h11">解释性研究缺口与未来研究议程</h2>
+<p>第一个A级缺口并非交叉材料数量有限，而是现有设计无法区分三种解释：信息超载先于网络疑病症，健康焦虑和搜索先于主观超载，或三者形成反馈循环。修复该缺口需要至少三波测量并区分个体内与个体间效应；若可能，还应同步记录搜索行为和短期情绪变化。</p>
+<p>第二个A级缺口是构念边界失效。信息超载中的失控感与网络疑病症中的过度搜索和痛苦可能内容重叠。可采用项目级构念映射、认知访谈和多特质多方法检验，并测试控制共同题项及方法因子后关系是否仍然存在。</p>
+<p>第三个A级缺口是单纯“信息数量”解释无法覆盖矛盾性、可信度、来源专业性和算法重复暴露。多因素实验可在相同信息量下改变矛盾性与来源，比较压力评价、不确定性管理和处理能力三种竞争预测。eHealth素养只有在信息确实可被评价时才可能发挥保护作用。</p>
+<p>第四个A级缺口是从网络疑病症到戒烟意向的解释不确定。威胁显著性与风险感知能够提高戒烟意向 (Kees et al., 2010; Shahab et al., 2007)，但自我效能、感知行为控制和信息回避可能改变这一转化 (Manyiwa &amp; Brennan, 2012; Hester, 2020; Poggiolini, 2019)。现有网络疑病症研究主要追踪搜索、焦虑、求医和疫情决策，而戒烟研究主要追踪风险沟通、自我效能、社会支持和干预参与。两者之间的知识断裂不是“组合变量较少”，而是尚不知道问题性健康搜索所产生的威胁何时会变成行动动机，何时反而变成回避与无助感。修复该缺口需要同时测量威胁、效能、回避、戒烟意向与后续戒烟尝试。</p>
+<p>第五个A级缺口是信息级联的理论角色尚未被区分。反吸烟消息确实可以在网络中复制、延展并由意见领袖扩散 (Lee, 2017; Myneni, 2013)，但可见的流行度可能表示规范信息、信息质量、群体身份或算法放大。相邻证据已显示描述性规范不一定独立预测戒烟意向 (Hester, 2020)，集体智能推荐也不一定改善总体戒断 (Hors-Fraile et al., 2022)。因此，所需的新解释不是预设级联必然正向，而是识别“什么人的什么选择，以何种可信度和一致性被展示”。只有当级联指向戒烟行为、来源可信且参照群体与自我相关时，正向调节才是合理而非自明的预测。</p>
+<p>与上述解释缺口相连的B级缺口是意向—行为断裂和方法偏差。网络疑病症研究多为同期自报，戒烟数字干预则显示参与、戒烟尝试和持续戒断并不等价 (Lenert et al., 2003; Ubhi et al., 2015; Tang et al., 2023)。因而，研究应将意向、尝试、7日/连续戒断与生化验证分层，并用多波追踪或实验区分反向因果。</p>
+<p>两个B级缺口分别涉及外部效度和行为推断。可通过常态—危机多情境复制以及临床与一般样本比较来检验边界；自报网络疑病症还需与真实搜索、咨询和医疗使用进行前瞻联结。学术价值应来自更可信的解释或推断，而不是简单更换国家、加入一个条件变量或采用更复杂的统计工具。</p>
+<h2 id="demo-review-h12">综合结论</h2>
+<p>信息超载传统关注信息环境与处理资源失配，网络疑病症传统关注健康焦虑背景下的重复搜索与痛苦，戒烟研究则关注威胁、效能、社会支持及意向—行为转化。现有证据能够分别支持这些组成部分，却尚不足以确定“信息超载→网络疑病症→戒烟意向”的单向因果链 (Bala et al., 2020; Li et al., 2023; Peng et al., 2021; Kees et al., 2010; Shahab et al., 2007)。该模型的解释价值在于区分“威胁动员”与“无效焦虑”，并检验社会可见性在何种内容、来源和效能条件下会将前者放大。</p>
+<p>因此，信息级联的正向调节不应被当作文献已经确认的事实，而应作为与零效应、负向效应和效能依赖效应相竞争的方向性假设 (Hester, 2020; Hors-Fraile et al., 2022; El-Hilly et al., 2016)。更有辨识力的研究应把信息属性、网络疑病症的动态变化、级联线索、自我效能和戒烟行为置于同一时间框架，并使用实际搜索、戒烟尝试和持续戒断作为意向之外的结果。</p>
+
+          </div>
+<h2 id="demo-review-references">参考文献</h2>
+<div class="demo-reference-list">
+<blockquote>以下条目由正文实际使用的审计标记自动同步；APA 细节仍须在最终投稿前核查。</blockquote>
+<p>A. A. MAKSIMENKO, А.А. Золотарева, &amp; D.V. Kashirskiy. (2025). From Screens to Sleeplessness: How Digital Stressors Are Linked to Sleep Characteristics in the Russian Population. Ekologiya Cheloveka (Human Ecology). https://doi.org/10.17816/humeco646356</p>
+<p>A.K.M. Najmul Islam, Eoin Whelan, &amp; Stoney Brooks. (2020). Does multitasking computer self-efficacy mitigate the impact of social media affordances on overload and fatigue among professionals?. ARAN (University of Galway Research Repository) (Ollscoil na Gaillimhe – University of Galway). https://doi.org/10.1108/itp-10-2019-0548</p>
+<p>Abdulrahman El-Hilly, Sheeraz Iqbal, Maroof Ahmed, Yusuf Sherwani, Mohammed Muntasir, Sarim Siddiqui, Zaid Al-Fagih, Omar S. Usmani, &amp; Andreas B. Eisingerich. (2016). Game On? Smoking Cessation Through the Gamification of mHealth: A Longitudinal Qualitative Study. JMIR Serious Games. https://doi.org/10.2196/games.5678</p>
+<p>Ahmed Awaisu, Mohamad Haniki Nik Mohamed, Noorliza Mohamad Noordin, Noorizan Abd Aziz, Syed Azhar Syed Sulaiman, Abdul Razak Muttalif, &amp; Aziah Ahmad Mahayiddin. (2011). The SCIDOTS Project: Evidence of benefits of an integrated tobacco cessation intervention in tuberculosis care on treatment outcomes. Substance Abuse Treatment Prevention and Policy. https://doi.org/10.1186/1747-597x-6-26</p>
+<p>Aleksandar Vujić, Marija Volarov, Milan Latas, Zsolt Demetrovics, Orsolya Kiraly, &amp; Attila Szabó. (2023). Are Cyberchondria and Intolerance of Uncertainty Related to Smartphone Addiction?. International Journal of Mental Health and Addiction. https://doi.org/10.1007/s11469-023-01054-6</p>
+<p>Alessio De Santo, Arielle Moro, Bruno Kocher, &amp; Adrian Holzer. (2022). Helping Each Other Quit Online: Understanding User Engagement and Real-life Outcomes of the r/StopSmoking Digital Smoking Cessation Community. ACM Transactions on Social Computing. https://doi.org/10.1145/3564745</p>
+<p>Alexander Skulmowski, &amp; Bernhard Standl. (2021). &lt;scp&gt;COVID&lt;/scp&gt; ‐19 information fatigue? A case study of a German university website during two waves of the pandemic. Human Behavior and Emerging Technologies. https://doi.org/10.1002/hbe2.260</p>
+<p>Alexandre Infanti, Vladan Starčević, Adriano Schimmenti, Yasser Khazaal, Laurent Karila, Alessandro Giardina, Maèva Flayelle, Seyedeh Boshra Hedayatzadeh Razavi, Stéphanie Baggio, Claus Vögele, &amp; Joël Billieux. (2023). Predictors of Cyberchondria During the COVID-19 Pandemic: Cross-sectional Study Using Supervised Machine Learning. JMIR Formative Research. https://doi.org/10.2196/42206</p>
+<p>Ali Farooq, Samuli Laato, &amp; A.K.M. Najmul Islam. (2020). Impact of Online Information on Self-Isolation Intention During the COVID-19 Pandemic: Cross-Sectional Study. Journal of Medical Internet Research. https://doi.org/10.2196/19128</p>
+<p>Ali Farooq, Samuli Laato, A.K.M. Najmul Islam, &amp; Jouni Isoaho. (2021). Understanding the impact of information sources on COVID-19 related preventive measures in Finland. Technology in Society. https://doi.org/10.1016/j.techsoc.2021.101573</p>
+<p>Andy Wai Kan Yeung, Anela Tosevska, Elisabeth Klager, Fabian Eibensteiner, Christos Tsagkaris, Emil D. Parvanov, Faisal A. Nawaz, Sabine Völkl-Kernstock, Eva Schaden, Maria Kletečka-Pulker, Harald Willschke, &amp; Atanas G. Atanasov. (2021). Medical and Health-Related Misinformation on Social Media: Bibliometric Study of the Scientific Literature. Journal of Medical Internet Research. https://doi.org/10.2196/28152</p>
+<p>Anithamol Babu. (2025). Between access and anxiety: the paradox of digital mental health literacy. Frontiers in Psychiatry. https://doi.org/10.3389/fpsyt.2025.1691945</p>
+<p>Anton E. Kunst, Casper van Splunter, Sigrid Troelstra, &amp; Jizzo R. Bosdriesz. (2019). Did the introduction of pictorial health warnings increaseinformation seeking for smoking cessation?: Time-seriesanalysis of Google Trends data in six countries. Tobacco Prevention &amp; Cessation. https://doi.org/10.18332/tpc/111130</p>
+<p>Antonia Barke, &amp; Bettina K. Doering. (2020). Development of an Instrument to Assess Parents’ Excessive Web-Based Searches for Information Pertaining to Their Children’s Health: The “Children’s Health Internet Research, Parental Inventory” (CHIRPI). Journal of Medical Internet Research. https://doi.org/10.2196/16148</p>
+<p>Astrid Müller, Eva Baumann, &amp; Marie‐Luise Dierks. (2021). [Cyberchondria - A New Behavioral Syndrome?]. PubMed. https://doi.org/10.1055/a-1348-8059</p>
+<p>B Shailaja, Vibha Shetty, Suprakash Chaudhury, &amp; T Murali. (2020). Exploring cyberchondria and its associations in dental students amid COVID-19 infodemic. Industrial Psychiatry Journal. https://doi.org/10.4103/ipj.ipj_212_20</p>
+<p>Bahar Kefeli Çol, Ayşe Gümüşler Başaran, &amp; Burcu Genç Köse. (2025). The Relationship Between E-Health Literacy, Health Anxiety, Cyberchondria, and Death Anxiety in University Students That Study in Health Related Department. Journal of Multidisciplinary Healthcare. https://doi.org/10.2147/jmdh.s513017</p>
+<p>Beata Bajcar, &amp; Jolanta Babiak. (2019). Self-esteem and cyberchondria: The mediation effects of health anxiety and obsessive–compulsive symptoms in a community sample. Current Psychology. https://doi.org/10.1007/s12144-019-00216-x</p>
+<p>Bing-Yue Zhao, Meirong Chen, Rong Lin, Yuanjiao Yan, &amp; Hong Li. (2024). Influence of information anxiety on core competency of registered nurses: mediating effect of digital health literacy. BMC Nursing. https://doi.org/10.1186/s12912-024-02275-3</p>
+<p>Branka Bagarić, &amp; Nataša Jokić‐Begić. (2019). Cyberchondria – Health Anxiety Related to Internet Searching. Socijalna psihijatrija. https://doi.org/10.24869/spsih.2019.28</p>
+<p>Branka Bagarić, &amp; Nataša Jokić‐Begić. (2022). Online research on COVID-19—The role of content ranking and COVID-19 fear. Cyberpsychology Journal of Psychosocial Research on Cyberspace. https://doi.org/10.5817/cp2022-5-2</p>
+<p>Bukola Titilayo Fagbemi, Chinwendu Ubani, Chinaecherem Okafor, &amp; Victor Akachukwu Ibiam. (2023). STRATEGIC HEALTH COMMUNICATION AND BEHAVIORAL MOBILIZATION: A RHETORICAL ANALYSIS OF CAMPAIGN MESSAGES THAT EFFECTIVELY INSPIRE PUBLIC ACTION. Global Journal of Psychology. https://doi.org/10.51594/gjp.v2i3.2144</p>
+<p>Carl J. Brandt, Gabrielle Isidora Søgaard, Jane Clemensen, Jens Søndergaard, &amp; Jesper Bo Nielsen. (2018). Determinants of Successful eHealth Coaching for Consumer Lifestyle Changes: Qualitative Interview Study Among Health Care Professionals. Journal of Medical Internet Research. https://doi.org/10.2196/jmir.9791</p>
+<p>Carlos Luís Parra-Calderón, Laura Josefina Balagué, Josep M Cortada, &amp; Álvaro Sánchez. (2011). Health promotion in primary care: How should we intervene? A qualitative study involving both physicians and patients. BMC Health Services Research. https://doi.org/10.1186/1472-6963-11-62</p>
+<p>Carmela Mento, Maria Silvestri, Pilar Amézaga, Maria Muscatello, Valentina Romeo, Antonio Bruno, &amp; Clemente Cedro. (2022). Anxiety sensitivity, uncertainty and recursive thinking: A continuum on Cyberchondria conditions during the Covid Outbreak. Journal of Mind and Medical Sciences. https://doi.org/10.22543/7674.91.p7887</p>
+<p>Chenglong Li, Hongxiu Li, &amp; Reima Suomi. (2021). Antecedents and consequences of the perceived usefulness of smoking cessation online health communities. Internet Research. https://doi.org/10.1108/intr-04-2020-0220</p>
+<p>Chenglong Li, Hongxiu Li, Reima Suomi, &amp; Liu Yong. (2021). Knowledge sharing in online smoking cessation communities: a social capital perspective. Internet Research. https://doi.org/10.1108/intr-03-2020-0113</p>
+<p>Chenjin Jia, &amp; Pengcheng Li. (2024). Generation Z’s Health Information Avoidance Behavior: Insights From Focus Group Discussions. Journal of Medical Internet Research. https://doi.org/10.2196/54107</p>
+<p>Chenxi Yang, &amp; Richard Huan Xu. (2025). Impact of Cyberchondria on Health and Quality of Life: Scoping Review. Journal of Medical Internet Research. https://doi.org/10.2196/77977</p>
+<p>Christiane Eichenberg, &amp; Markus Schott. (2019). Use of Web-Based Health Services in Individuals With and Without Symptoms of Hypochondria: Survey Study. Journal of Medical Internet Research. https://doi.org/10.2196/10980</p>
+<p>Christine Ibrahim, Victor M. Tang, Daniel M. Blumberger, Saima Shakil Malik, Rachel F. Tyndale, Alisson Paulino Trevizol, Mera S. Barr, Zafiris J. Daskalakis, Abraham Zangen, &amp; Bernard Le Foll. (2023). Efficacy of insula deep repetitive transcranial magnetic stimulation combined with varenicline for smoking cessation: A randomized, double-blind, sham controlled trial. Brain stimulation. https://doi.org/10.1016/j.brs.2023.10.002</p>
+<p>Christopher Carroll, Jo Rick, Joanna Leaviss, David Fishwick, &amp; Andrew Booth. (2013). A qualitative evidence synthesis of employees’ views of workplace smoking reduction or cessation interventions. BMC Public Health. https://doi.org/10.1186/1471-2458-13-1095</p>
+<p>Claudia Poggiolini. (2019). High self-efficacy regarding smoking cessation may weaken the intention to quit smoking. Cogent Psychology. https://doi.org/10.1080/23311908.2019.1574096</p>
+<p>Daniel Kotz, Geertjan Wesseling, Marcus J. H. Huibers, &amp; Onno C. P. van Schayck. (2009). Efficacy of confronting smokers with airflow limitation for smoking cessation. European Respiratory Journal. https://doi.org/10.1183/09031936.00116308</p>
+<p>Daniel Miezah, Rejoice Adzakpa, Emmanuella Mawuena Ama Bani, &amp; Paul Obeng. (2026). Prevalence and Associated Factors of Cyberchondria: A Scoping Review. The Scientific World JOURNAL. https://doi.org/10.1155/tswj/9950027</p>
+<p>Dawei Wang, Lingchao Sun, Yunru Shao, Xiaoyan Zhang, Phil Maguire, &amp; Yixin Hu. (2023). Research and Evaluation of a Cyberchondria Severity Scale in a Chinese Context. Psychology Research and Behavior Management. https://doi.org/10.2147/prbm.s431470</p>
+<p>Dávid Pócs, Otília Adamovits, Jezdancher Watti, Róbert Kovács, &amp; Ogúz Kelemen. (2021). Facebook Users’ Interactions, Organic Reach, and Engagement in a Smoking Cessation Intervention: Content Analysis. Journal of Medical Internet Research. https://doi.org/10.2196/27853</p>
+<p>Emanuela Ingusci, Fulvio Signore, Maria Luisa Giancaspro, Amelia Manuti, Monica Molino, Vincenzo Russo, Margherita Zito, &amp; Claudio Giovanni Cortese. (2021). Workload, Techno Overload, and Behavioral Stress During COVID-19 Emergency: The Role of Job Crafting in Remote Workers. Frontiers in Psychology. https://doi.org/10.3389/fpsyg.2021.655148</p>
+<p>Eoin McElroy, Mathew Kearney, Jade Touhey, Joseph Evans, Yasmin Cooke, &amp; Mark Shevlin. (2019). The CSS-12: Development and Validation of a Short-Form Version of the Cyberchondria Severity Scale. Ulster University Research Portal (Ulster University). https://doi.org/10.1089/cyber.2018.0624</p>
+<p>Felipe Montes, Martha Blanco, Andrés F. Useche, Sharon Sánchez-Franco, Carlos Caro, Lei Tong, Jie Li, Huiyu Zhou, Jennifer Murray, Olga L. Sarmiento, Frank Kee, &amp; Ruth F. Hunter. (2023). Exploring the mechanistic pathways of how social network influences social norms in adolescent smoking prevention interventions. Scientific Reports. https://doi.org/10.1038/s41598-023-28161-7</p>
+<p>Filiz Polat, Leyla DELİBAŞ, &amp; İbrahim Bilir. (2022). Investigating the Relationship Between Cyberchondria Level and Perceived Stress in Young Adults. Turkish Journal of Science and Health. https://doi.org/10.51972/tfsd.1112388</p>
+<p>Flis Henwood, Sally Wyatt, Angie Hart, &amp; Julie Smith. (2002). Turned on or turned off?: accessing health information on the internet. Journal of the Association for Information Systems.</p>
+<p>Gideon Appiah Kusi, Mst Zannatul Azmira Rumki, Fiona Hammond Quarcoo, Esther Otchere, &amp; And Guanhui Fu. (2022). The Role of Information Overload on Consumers’ Online Shopping Behavior. Journal of Business and Management Studies. https://doi.org/10.32996/jbms.2022.4.4.16</p>
+<p>Han Zheng, &amp; Shaohai Jiang. (2022). Linking the Pathway from Exposure to Online Vaccine Information to Cyberchondria During the COVID-19 Pandemic: A Moderated Mediation Model. Cyberpsychology Behavior and Social Networking. https://doi.org/10.1089/cyber.2022.0045</p>
+<p>Han Zheng, Dion Hoe‐Lian Goh, Edmund W. J. Lee, Chei Sian Lee, &amp; Yin‐Leng Theng. (2021). Understanding the effects of message cues on &lt;scp&gt;COVID&lt;/scp&gt;‐19 information sharing on Twitter. Journal of the Association for Information Science and Technology. https://doi.org/10.1002/asi.24587</p>
+<p>Han Zheng, Xiaoyu Chen, &amp; Shaoxiong Fu. (2020). An exploration of determinants of cyberchondria: A moderated mediation analysis. Proceedings of the Association for Information Science and Technology. https://doi.org/10.1002/pra2.214</p>
+<p>Harun Aslan, &amp; Gülsüm Şeyma Koca. (2025). Examining the relationships between e-health literacy, cyberchondria, health anxiety, and health perception among foreign university students. BMC Public Health. https://doi.org/10.1186/s12889-025-25636-2</p>
+<p>Harveen Kaur Ubhi, Susan Michie, Daniel Kotz, Wai Chi Wong, &amp; Robert West. (2015). A Mobile App to Aid Smoking Cessation: Preliminary Evaluation of SmokeFree28. Journal of Medical Internet Research. https://doi.org/10.2196/jmir.3479</p>
+<p>Hossein Ghalavand, Sirous Panahi, &amp; Mohsen Nouri. (2025). Opportunities and challenges of social media for oral health literacy improvement: a qualitative investigation based on Iranian dentists’ perspectives. BMC Health Services Research. https://doi.org/10.1186/s12913-025-12845-z</p>
+<p>Jakob W. Hester. (2020). IDENTIFYING AND PREDICTING INTENTION TO QUIT USING JUUL AMONG EMERGING ADULTS. UKnowledge (University of Kentucky). https://doi.org/10.13023/etd.2020.074</p>
+<p>Jamie Hartmann-Boyce, Hayden McRobbie, Nicola Lindson, Chris Bullen, Rachna Begh, Annika Theodoulou, Caitlin Notley, Nancy A Rigotti, Tari Turner, Ailsa R Butler, Thomas R Fanshawe, &amp; Peter Hajek. (2020). Electronic cigarettes for smoking cessation. UEA Digital Repository (University of East Anglia). https://doi.org/10.1002/14651858.cd010216.pub4</p>
+<p>Jennifer Murray, Sharon Sánchez-Franco, Olga L. Sarmiento, Erik O. Kimbrough, Christopher Tate, Shannon C. Montgomery, Rajnish Kumar, Laura Dunne, Abhijit Ramalingam, Erin L. Krupka, Felipe Montes, Huiyu Zhou, Laurence Moore, Linda Bauld, Blanca Llorente, Frank Kee, &amp; Ruth F. Hunter. (2023). Selection homophily and peer influence for adolescents’ smoking and vaping norms and outcomes in high and middle-income settings. Humanities and Social Sciences Communications. https://doi.org/10.1057/s41599-023-02124-9</p>
+<p>Jennifer Murray, Sharon Sánchez-Franco, Olga L. Sarmiento, Erik O. Kimbrough, Christopher Tate, Shannon C. Montgomery, Rajnish Kumar, Laura Dunne, Abhijit Ramalingam, Erin L. Krupka, Felipe Montes, Huiyu Zhou, Laurence Moore, Linda Bauld, Blanca Llorente, Frank Kee, &amp; Ruth F. Hunter. (2025). Moderators of peer influence effects for adolescents’ smoking and vaping norms and outcomes in high and middle-income settings. Frontiers in Psychology. https://doi.org/10.3389/fpsyg.2025.1655761</p>
+<p>Jenny Simpson. (2017). Appeal to fear in health care: appropriate or inappropriate?. Chiropractic &amp; Manual Therapies. https://doi.org/10.1186/s12998-017-0157-8</p>
+<p>Jeremy Kees, Scot Burton, J. Craig Andrews, &amp; John Kozup. (2010). Understanding how Graphic Pictorial Warnings Work on Cigarette Packaging. e-Publications@Marquette (Marquette University). https://doi.org/10.1509/jppm.29.2.265</p>
+<p>Jiachen Yan. (2025). Adoption, Processing, and Persuasion Mechanisms of Health Information in Digital Media. The Journal of Medicine Humanity and Media. https://doi.org/10.62787/mhm.v3i3.229</p>
+<p>Jinsong Tang, Jie Yang, Yi Liu, Xiaocong Liu, Li Ling, Yunkai Sun, Jieyin Jin, Yehong Fang, Zitang Zhou, Yunfei Wang, Wei Chen, Ann McNeill, Brian C. Kelly, Joanna E Cohen, &amp; Yanhui Liao. (2023). Efficacy of WeChat-based online smoking cessation intervention (‘WeChat WeQuit’) in China: a randomised controlled trial. EClinicalMedicine. https://doi.org/10.1016/j.eclinm.2023.102009</p>
+<p>Joon Soo Lim, &amp; Nalae Hong. (2025). Perceived Search Overload, Generative AI Credibility, and Comparative Usefulness: A Channel Complementarity Approach to Health Information Seeking. Health &amp; New Media Research. https://doi.org/10.22720/hnmr.2025.00115</p>
+<p>Josephine de la Cuesta, Jypzie M. Catedrilla, Ryan Ebardo, Laiza LIMPIN, Cecilia B. LEAÑO, &amp; Hazel Trapero. (2019). Personality Traits of Future Nurses and Cyberchondria: Findings from an Emerging Economy. International Conference on Computers in Education. https://doi.org/10.58459/icce.2019.212</p>
+<p>Julia Metag, &amp; Gwendolin Gurr. (2022). Too Much Information? A Longitudinal Analysis of Information Overload and Avoidance of Referendum Information Prior to Voting Day. Journalism &amp; Mass Communication Quarterly. https://doi.org/10.1177/10776990221127380</p>
+<p>Julian Wangler, &amp; Michael Janský. (2020). General practitioners’ challenges and strategies in dealing with Internet-related health anxieties—results of a qualitative study among primary care physicians in Germany. Wiener Medizinische Wochenschrift. https://doi.org/10.1007/s10354-020-00777-8</p>
+<p>Kai Li, Shanshan Jiang, Xingde Yan, &amp; Jie Li. (2023). Mechanism study of social media overload on health self-efficacy and anxiety. Heliyon. https://doi.org/10.1016/j.heliyon.2023.e23326</p>
+
+<p>Karolien Adriaens, Dinska Van Gucht, Paul Declerck, &amp; Frank Baeyens. (2014). Effectiveness of the Electronic Cigarette: An Eight-Week Flemish Study with Six-Month Follow-up on Smoking Reduction, Craving and Experienced Benefits and Complaints. International Journal of Environmental Research and Public Health. https://doi.org/10.3390/ijerph111111220</p>
+<p>Katherine Jane Loudon, Steven Buchanan, &amp; Ian Ruthven. (2015). The everyday life information seeking behaviours of first-time mothers. Strathprints: The University of Strathclyde institutional repository (University of Strathclyde). https://doi.org/10.1108/jd-06-2014-0080</p>
+<p>Kathleen A. Garrison, Prasanta Pal, Rahil Rojiani, Jesse Dallery, Stephanie S. O’Malley, &amp; Judson A. Brewer. (2015). A randomized controlled trial of smartphone-based mindfulness training for smoking cessation: a study protocol. BMC Psychiatry. https://doi.org/10.1186/s12888-015-0468-z</p>
+<p>Kemal Elciyar. (2021). OVERLOADING IN LOCKDOWN: EFFECTS OF SOCIAL, INFORMATION AND COMMUNICATION OVERLOADS IN COVID-19 DAYS. İNİF E - Dergi. https://doi.org/10.47107/inifedergi.872896</p>
+<p>Khalid A. Bin Abdulrahman, Sultan Khalid AL Musfir, Abdullah Suliman Alforaih, Asim Mohammed Alshehri, Ayed Khalid Aldossari, &amp; Fahad Dawood Bin Dawood. (2024). The prevalence of cyberchondria and the impact of skepticism on medical decisions among Imam Mohammed Ibn Saud Islamic University students, Riyadh, Saudi Arabia. Journal of Family Medicine and Primary Care. https://doi.org/10.4103/jfmpc.jfmpc_640_24</p>
+<p>Kristen E. Riley, Michael R. Ulrich, Heidi Hamann, &amp; Jamie S. Ostroff. (2017). Decreasing Smoking but Increasing Stigma? Anti-tobacco Campaigns, Public Health, and Cancer Care. The AMA Journal of Ethic. https://doi.org/10.1001/journalofethics.2017.19.5.msoc1-1705</p>
+<p>L C Struik, &amp; Youjin Yang. (2021). e-Cigarette Cessation: Content Analysis of a Quit Vaping Community on Reddit. Journal of Medical Internet Research. https://doi.org/10.2196/28303</p>
+<p>Laura Sbaffi, James W. Walton, John Blenkinsopp, &amp; Graham Walton. (2020). Information Overload in Emergency Medicine Physicians: A Multisite Case Study Exploring the Causes, Impact, and Solutions in Four North England National Health Service Trusts. Journal of Medical Internet Research. https://doi.org/10.2196/19126</p>
+<p>Leila Pfaeffli Dale, Robyn Whittaker, Yannan Jiang, Ralph Stewart, Anna Rolleston, &amp; Ralph Maddison. (2015). Text Message and Internet Support for Coronary Heart Disease Self-Management: Results From the Text4Heart Randomized Controlled Trial. Journal of Medical Internet Research. https://doi.org/10.2196/jmir.4944</p>
+<p>Leslie Lenert, Ricardo F. Muñoz, Joel Stoddard, Kevin Delucchi, Aditya Bansod, Szymon Skoczeń, &amp; Eliseo J. Pérez‐Stable. (2003). Design and Pilot Evaluation of an Internet Smoking Cessation Program. Journal of the American Medical Informatics Association. https://doi.org/10.1197/jamia.m1128</p>
+<p>Lingling Zhong, Junwei Cao, &amp; Fengtao Xue. (2024). The paradox of convenience: how information overload in mHealth apps leads to medical service overuse. Frontiers in Public Health. https://doi.org/10.3389/fpubh.2024.1408998</p>
+<p>Lion Shahab, Sue Hall, &amp; Theresa M. Marteau. (2007). Showing smokers with vascular disease images of their arteries to motivate cessation: A pilot study. UCL Discovery (University College London). https://doi.org/10.1348/135910706x109684</p>
+<p>Lydia Qianqian Li, Quynh Ngoc Bui, &amp; Hui Yan. (2023). The impact of COVID-19 information overload on Vietnamese consumers' online purchase intention. International Journal of Emerging Markets. https://doi.org/10.1108/ijoem-05-2022-0860</p>
+<p>Majd T. Mrayyan, Ja’far M. Alkhawaldeh, Imad Alfayoumi, Abdullah Algunmeeyn, Hamzeh Y. Abunab, Wafika A. Suliman, Mohammad Abu Hasheesh, &amp; Raed Shudifat. (2023). COVID-19 era-related e-learning: a cross-sectional web-scale study of cyberchondria, internet addiction and anxiety-related symptomatology among university nursing students. BMJ Open. https://doi.org/10.1136/bmjopen-2023-071971</p>
+<p>Manel Ben Fredj, Behaeddin Garrach, Cyrine Bennasrallah, A. Migaou, Héla Abroug, Wafa Dhouib, Imen Zemni, Meriem Kacem, Inès Bouanène, &amp; Asma Belguith Sriha. (2022). Spirometry as a motivator for smoking cessation among patients attending the smoking cessation clinic of Monastir. BMC Public Health. https://doi.org/10.1186/s12889-022-13583-1</p>
+<p>Margaret S. Zimmerman. (2021). Health information-seeking behavior in the time of COVID-19: information horizons methodology to decipher source path during a global pandemic. Journal of Documentation. https://doi.org/10.1108/jd-01-2021-0022</p>
+<p>Maria Dickson‐Spillmann, Severin Haug, &amp; Michael P Schaub. (2013). Group hypnosis vs. relaxation for smoking cessation in adults: a cluster-randomised controlled trial. BMC Public Health. https://doi.org/10.1186/1471-2458-13-1227</p>
+<p>Marta Ciułkowicz, Błażej Misiak, Dorota Szczęśniak, Jolanta Grzebieluch, Julian Maciaszek, &amp; Joanna Rymaszewska. (2022). Social Support Mediates the Association between Health Anxiety and Quality of Life: Findings from a Cross-Sectional Study. International Journal of Environmental Research and Public Health. https://doi.org/10.3390/ijerph191912962</p>
+<p>Marta Ciułkowicz, Błażej Misiak, Dorota Szczęśniak, Jolanta Grzebieluch, Julian Maciaszek, &amp; Joanna Rymaszewska. (2022). The Portrait of Cyberchondria—A Cross-Sectional Online Study on Factors Related to Health Anxiety and Cyberchondria in Polish Population during SARS-CoV-2 Pandemic. International Journal of Environmental Research and Public Health. https://doi.org/10.3390/ijerph19074347</p>
+<p>Mary Summer Starling. (2016). Measuring and Modeling Adolescent Utilization, Judgments, and Trust of Online Sexual Health Information. eScholarship (California Digital Library).</p>
+<p>Mary Wells, Patricia Aitchison, Fiona Harris, Gözde Özakinci, Andrew Radley, Linda Bauld, Vikki Entwistle, Alastair Munro, Sally Haw, Bill Culbard, &amp; Brian Williams. (2017). Barriers and facilitators to smoking cessation in a cancer context: A qualitative study of patient, family and professional views. BMC Cancer. https://doi.org/10.1186/s12885-017-3344-z</p>
+<p>Maryline Vivion, Valérie Reid, Ève Dubé, A. Coutant, Alexandre Benoît, &amp; André Tourigny. (2024). How older adults manage misinformation and information overload - A qualitative study. BMC Public Health. https://doi.org/10.1186/s12889-024-18335-x</p>
+<p>Matea Šoštarić, Una Mikac, &amp; Nataša Jokić‐Begić. (2023). Understanding cyberchondria in pregnant women: longitudinal assessment of risk factors, triggers, and outcomes. Journal of Psychosomatic Obstetrics &amp; Gynecology. https://doi.org/10.1080/0167482x.2023.2265050</p>
+<p>Matteo Vismara, Daniele Vitella, Roberta Biolcati, Federica Ambrosini, Veronica Pirola, Bernardo Dell’Osso, &amp; R. Truzoli. (2021). The Impact of COVID-19 Pandemic on Searching for Health-Related Information and Cyberchondria on the General Population in Italy. Frontiers in Psychiatry. https://doi.org/10.3389/fpsyt.2021.754870</p>
+<p>Matthias Marsall, Gerrit Engelmann, Eva‐Maria Skoda, Martin Teufel, &amp; Alexander Bäuerle. (2021). Measuring Electronic Health Literacy: Development, Validation, and Test of Measurement Invariance of a Revised German Version of the eHealth Literacy Scale. Journal of Medical Internet Research. https://doi.org/10.2196/28252</p>
+<p>Mehmet Ali Kurçer, Zeynep Erdoğan, &amp; Vildan ÇAKIR KARDEŞ. (2021). The effect of the COVID‐19 pandemic on health anxiety and cyberchondria levels of university students. Perspectives In Psychiatric Care. https://doi.org/10.1111/ppc.12850</p>
+<p>Mengmeng Guo, Oberiri Destiny Apuke, Elif Asude Tunca, &amp; Verlumun Celestine Gever. (2023). Modelling the Information Abundance Factors That Predict Fake News Sharing Behaviour of Social Media Users: Testing the Moderating Role of Resilience. Journal of Asian and African Studies. https://doi.org/10.1177/00219096231192312</p>
+<p>Mohammad Nasiri, Shahram Mohammadkhani, Mehdi Akbari, &amp; M Mahmoud Alilou. (2023). The structural model of cyberchondria based on personality traits, health-related metacognition, cognitive bias, and emotion dysregulation. Frontiers in Psychiatry. https://doi.org/10.3389/fpsyt.2022.960055</p>
+<p>Mohammed Najah Mahdi, Abdul Rahim Ahmad, Roslan Ismail, Hayder Natiq, &amp; Mohammed Mohammed. (2020). Solution for Information Overload Using Faceted Search–A Review. IEEE Access. https://doi.org/10.1109/access.2020.3005536</p>
+<p>Mona Vintilă, Gianina-Mălina Lăzărescu, Argyroula Kalaitzaki, Otilia Tudorel, &amp; Cosmin Goian. (2023). Fake news during the war in Ukraine: coping strategies and fear of war in the general population of Romania and in aid workers. Frontiers in Psychology. https://doi.org/10.3389/fpsyg.2023.1151794</p>
+<p>Ms. Sharvari S Gupte. (2024). INVESTIGATING THE ASSOCIATION BETWEEN CYBERCHONDRIA AND HEALTH ANXIETY. EPH - International Journal of Medical and Health Science. https://doi.org/10.53555/eijmhs.v10i2.242</p>
+<p>Muhammad Waleed Ayub Ghouri, Guofeng Wang, Muhammad Ali Hussain, Zhisheng Li, &amp; Tachia Chin. (2024). Provoking Buying Behaviors Amid Crises: Unfolding the Underlying Mechanisms of Psychological Impairments. International Journal of Mental Health Promotion. https://doi.org/10.32604/ijmhp.2024.044759</p>
+<p>Nabil Hasan Al-Kumaim, Abdulsalam K. Alhazmi, Fathey Mohammed, Nadhmi A. Gazem, Muhammad Salman Shabbir, &amp; Yousef Fazea. (2021). Exploring the Impact of the COVID-19 Pandemic on University Students’ Learning Life: An Integrated Conceptual Motivational Model for Sustainable and Healthy Online Learning. Sustainability. https://doi.org/10.3390/su13052546</p>
+<p>Neşe Karakaş, Çiğdem Tekin, Recep Bentlı, &amp; Ekrem Demir. (2022). Cyberchondria, Covid-19 phobia, and well-being: a relational study on teachers. La Medicina del lavoro. https://doi.org/10.23749/mdl.v113i3.12661</p>
+<p>Ningyuan Guo, Sheng Zhi Zhao, Xue Weng, Yongda Wu, Tzu Tsun Luk, Janet Yuen Ha Wong, Tai Hing Lam, &amp; Man Ping Wang. (2021). Associations of COVID-19 online information sources and information overload with psychological distress symptoms: a population-based study. Translational Behavioral Medicine. https://doi.org/10.1093/tbm/ibab086</p>
+<p>Novi Fadila, &amp; Free Dirga Dwatra. (2024). THE INFLUENCE INTOLERANCE OF UNCERTAINTY ON CYBERCHONDRIA IN EARLY ADULT INTERNET USERS. In Trend International Journal of Trends in Global Psychological Science and Education. https://doi.org/10.62260/intrend.v1i2.128</p>
+<p>Nudrat Rashid, Amina Shahid, Mehwish Munir, Muhammad Umar Khan, &amp; Zoobia Ramzan. (2023). Role of Anxiety Sensitivity, Intolerance of Uncertainty, and Cyberchondria Behaviors among Individuals Diagnosed with COVID-19. Pakistan Journal of Health Sciences. https://doi.org/10.54393/pjhs.v4i12.1173</p>
+<p>Olli Tyrväinen, Henri Pirkkalainen, Markus Salo, &amp; Heikki Karjaluoto. (2025). Overloaded yet addicted? A meta-analysis of the outcomes of social media overload. Telematics and Informatics. https://doi.org/10.1016/j.tele.2025.102247</p>
+<p>Ozkan Bahadir, &amp; Cihad Dündar. (2024). The impact of online health information source preference on intolerance to uncertainty and cyberchondria in a youthful generation. Indian Journal of Psychiatry. https://doi.org/10.4103/indianjpsychiatry.indianjpsychiatry_715_23</p>
+<p>Pasquale Caponnetto, Davide Campagna, Fabio Cibella, Jaymin B. Morjaria, Massimo Caruso, Cristina Russo, &amp; Riccardo Polosa. (2013). EffiCiency and Safety of an eLectronic cigAreTte (ECLAT) as Tobacco Cigarettes Substitute: A Prospective 12-Month Randomized Control Design Study. PLoS ONE. https://doi.org/10.1371/journal.pone.0066317</p>
+<p>Paul Hartog. (2017). A Generation of Information Anxiety: Refinements and Recommendations. The Christian librarian:/The Christian librarian. https://doi.org/10.55221/2572-7478.1007</p>
+<p>Paulo Rodrigo Bazán, Raymundo Machado de Azevedo Neto, Joao Antonio Antonio Dias, Vanessa Gil Salvatierra, Liana Guerra Sanches, Shirley Silva Lacerda, Edson Amaro, Elisa Harumi Kozasa, &amp; Joana Bisol Balardin. (2020). COVID-19 information exposure in digital media and implications for employees in the health care sector: findings from an online survey. Einstein (São Paulo). https://doi.org/10.31744/einstein_journal/2020ao6127</p>
+<p>Ping Wang, Wei Chen, Lin Li, Ming Yi, &amp; Heng Ding. (2024). Exploring the Routines from Fear of Missing Out to Cyberchondria via a Dual System Perspective. International Journal of Human-Computer Interaction. https://doi.org/10.1080/10447318.2024.2423333</p>
+<p>Preeda Sansakorn, Iqra Mushtaque, Muhammad Awais‐E‐Yazdan, &amp; Muhammad Khyzer Bin Dost. (2024). The Relationship between Cyberchondria and Health Anxiety and the Moderating Role of Health Literacy among the Pakistani Public. International Journal of Environmental Research and Public Health. https://doi.org/10.3390/ijerph21091168</p>
+<p>Purwanto Purwanto, Dedy Ansari Harahap, Dita Amanah, &amp; Muji Gunarto. (2021). Beban Infomasi Media Sosial Dan Niat Melakukan Isolasi Mandiri serta Panic Buying Selama Pandemi Covid 19. Jurnal Manajemen. https://doi.org/10.32832/jm-uika.v12i2.4327</p>
+<p>Qing Huang, Sihan Lei, &amp; Binbin Ni. (2022). Perceived Information Overload and Unverified Information Sharing on WeChat Amid the COVID-19 Pandemic: A Moderated Mediation Model of Anxiety and Perceived Herd. Frontiers in Psychology. https://doi.org/10.3389/fpsyg.2022.837820</p>
+<p>Rahul Varma, &amp; Tushar Singh. (2023). Cyberchondria and health: Exploring the linkages. Mind and Society. https://doi.org/10.56011/mind-mri-122-20233</p>
+<p>Rahul Varma, Sreeja Das, &amp; Tushar Singh. (2021). Cyberchondria Amidst COVID-19 Pandemic: Challenges and Management Strategies. Frontiers in Psychiatry. https://doi.org/10.3389/fpsyt.2021.618508</p>
+<p>Raziye Şavkın, İzgi Güven, &amp; Ni̇hal Büker. (2022). Health Literacy and Cyberchondria Levels in Healthcare Workers and Their Relationship with Body Awareness and Physical Activity. Medical Bulletin of Haseki. https://doi.org/10.4274/haseki.galenos.2022.8258</p>
+<p>Renu Bala, Amit Srivastava, Gouri Devi Ningthoujam, Thadoi Potsangbam, Amita Oinam, &amp; Lily Anal. (2020). An Observational Study in Manipur State, India on Preventive Behavior Influenced by Social Media During the COVID-19 Pandemic Mediated by Cyberchondria and Information Overload. Journal of Preventive Medicine and Public Health. https://doi.org/10.3961/jpmph.20.465</p>
+<p>Reynold Padagas, Butch Stephen Duay, &amp; Jill Dalisay. (2022). Cyberchondria among Filipino teacher education students. International Journal of Evaluation and Research in Education (IJERE). https://doi.org/10.11591/ijere.v11i3.22287</p>
+<p>Richard A. Brown, Susan E. Ramsey, David R. Strong, Mark G. Myers, Christopher W. Kahler, Carl W. Lejuez, Raymond Niaura, Unto E. Pallonen, Alessandra N. Kazura, Michael G. Goldstein, &amp; David B. Abrams. (2003). Effects of motivational interviewing on smoking cessation in adolescents with psychiatric disorders. Tobacco Control. https://doi.org/10.1136/tc.12.suppl_4.iv3</p>
+<p>Richard Holliday, Philip M. Preshaw, Vicky Ryan, Falko F. Sniehotta, Suzanne McDonald, Linda Bauld, &amp; Elaine McColl. (2019). A feasibility study with embedded pilot randomised controlled trial and process evaluation of electronic cigarettes for smoking cessation in patients with periodontitis. Pilot and Feasibility Studies. https://doi.org/10.1186/s40814-019-0451-4</p>
+<p>Richard Huan Xu, &amp; C.-S. Chen. (2024). Moderating Effect of Coping Strategies on the Association Between the Infodemic-Driven Overuse of Health Care Services and Cyberchondria and Anxiety: Partial Least Squares Structural Equation Modeling Study. Journal of Medical Internet Research. https://doi.org/10.2196/53417</p>
+<p>Richard Huan Xu, Xiao Liang, &amp; Vladan Starčević. (2025). Exploring the Relationship Between Cyberchondria and Suicidal Ideation: Cross-Sectional Mediation Analysis. Journal of Medical Internet Research. https://doi.org/10.2196/72414</p>
+<p>Riffat Shahani, Fahad Asmi, Jin Ma, Asma Zawar, Olayemi Hafeez Rufai, Sayibu Muhideen, Tunde Simeon Amosun, &amp; Jianxun Chu. (2023). How cyberchondria and decision self-efficacy shapes the acceptability of COVID-19 vaccine: A gender-based comparison. Digital Health. https://doi.org/10.1177/20552076231185430</p>
+<p>Rilla Khaled. (2008). Culturally-Relevant Persuasive Technology. Figshare. https://doi.org/10.26686/wgtn.16934746.v1</p>
+<p>Rodrigo Robles-Mariños, Germán F. Alvarado, Jorge L. Maguiña, &amp; Juan Carlos Bazo‐Alvarez. (2023). The short-form of the Cyberchondria Severity Scale (CSS-12): Adaptation and validation of the Spanish version in young Peruvian students. PLoS ONE. https://doi.org/10.1371/journal.pone.0292459</p>
+<p>Roro Isyawati Permata Ganggi. (2020). Information Anxieties and Information Distrust: The effects of Overload Information about COVID – 19. E3S Web of Conferences. https://doi.org/10.1051/e3sconf/202020215014</p>
+<p>Ruth F. Hunter, Felipe Montes, Jennifer Murray, Sharon Sánchez-Franco, Shannon C. Montgomery, Joaquín Jaramillo, Christopher Tate, Rajnish Kumar, Laura Dunne, Abhijit Ramalingam, Erik O. Kimbrough, Erin L. Krupka, Huiyu Zhou, Laurence Moore, Linda Bauld, Blanca Llorente, Olga L. Sarmiento, &amp; Frank Kee. (2020). MECHANISMS Study: Using Game Theory to Assess the Effects of Social Norms and Social Networks on Adolescent Smoking in Schools—Study Protocol. Frontiers in Public Health. https://doi.org/10.3389/fpubh.2020.00377</p>
+
+<p>Saba Batool Wadhar, Riffat Shahani, Rongting Zhou, Ahmad Nabeel Siddiquei, Qing Ye, &amp; Fahad Asmi. (2023). What Factors Will Influence Chinese International Traveling for Leisure in the Post-COVID-19 Era: Role of Health Priorities and Health-Related Information Literacy. Healthcare. https://doi.org/10.3390/healthcare11030315</p>
+<p>Sabeen Sabir, &amp; Irum Naqvi. (2023). Prevalence of cyberchondria among university students: an emerging challenge of the 21st century. Journal of the Pakistan Medical Association. https://doi.org/10.47391/jpma.7771</p>
+<p>Safaa M. El-Zoghby, Nancy Zaghloul, Ayat Mahmoud Tawfik, Noura M. Elsherbiny, Shaimaa A. Shehata, &amp; Enayat M. Soltan. (2024). Cyberchondria and smartphone addiction: A correlation survey among undergraduate medical students in Egypt. Journal of the Egyptian Public Health Association. https://doi.org/10.1186/s42506-024-00154-y</p>
+<p>Sahiti Myneni. (2013). Attributing Meaning to Online Social Network Analysis for Tailored Socio-Behavioral Support Systems. DigtalCommons @ Texas Medical Center Library (Texas Medical Center).</p>
+<p>Saira Hanif Soroya, &amp; Anthony Faiola. (2023). Why did people avoid information during the COVID-19 pandemic? Understanding information sources' dynamics among Pakistani Z generation. Library Hi Tech. https://doi.org/10.1108/lht-02-2022-0113</p>
+<p>Saira Hanif Soroya, Ali Farooq, Khalid Mahmood, Jouni Isoaho, &amp; Shan-e Zara. (2020). From information seeking to information avoidance: Understanding the health information behavior during a global health crisis. Information Processing &amp; Management. https://doi.org/10.1016/j.ipm.2020.102440</p>
+<p>Samar J. Melhem, Shereen Nabhani‐Gebara, &amp; Reem Kayyali. (2024). Evaluating online health information utilisation and its psychosocial implications among breast cancer survivors: Qualitative explorations. Health Promotion Perspectives. https://doi.org/10.34172/hpp.42682</p>
+<p>Sameera Ahmed. (2020). Managing News Overload (MNO): The COVID-19 Infodemic. Information. https://doi.org/10.3390/info11080375</p>
+<p>Sami Al‐Rawashdeh, Majd T. Mrayyan, Abdallah Abu Khait, &amp; Majdi Rababa. (2022). Differences in Cyberchondria, Internet Addiction, Anxiety Sensitivity, Health Anxiety, and Coronavirus Anxiety Among Students: A Web-Based Comparative Survey. Electronic Journal of General Medicine. https://doi.org/10.29333/ejgm/11876</p>
+<p>Samira Saad Ali, Nourhan Essam Hendawi, Ayman Mohamed El‐Ashry, &amp; Manal Saeed Mohammed. (2024). The relationship between cyberchondria and health literacy among first-year nursing students: the mediating effect of health anxiety. BMC Nursing. https://doi.org/10.1186/s12912-024-02396-9</p>
+<p>Samuli Laato, A. K. M. Najmul Islam, Muhammad Nazrul Islam, &amp; Eoin Whelan. (2020). What drives unverified information sharing and cyberchondria during the COVID-19 pandemic?. arXiv (Cornell University). https://doi.org/10.1080/0960085x.2020.1770632</p>
+<p>Samuli Laato, A.K.M. Najmul Islam, Ali Farooq, &amp; Amandeep Dhir. (2020). Unusual purchasing behavior during the early stages of the COVID-19 pandemic: The stimulus-organism-response approach. Journal of Retailing and Consumer Services. https://doi.org/10.1016/j.jretconser.2020.102224</p>
+<p>Sancia West, Rachel Kornhaber, Denis Visentin, Deependra Kaji Thapa, &amp; Michelle Cleary. (2020). The role of the health professional supporting consumers who use ‘Dr Google’. Journal of Advanced Nursing. https://doi.org/10.1111/jan.14419</p>
+<p>Santiago Hors-Fraile, Math J. J. M. Candel, Francine Schneider, Shwetambara Malwade, Francisco J. Núñez-Benjumea, Shabbir Syed-Abdul, Luis Fernández-Luque, &amp; Hein de Vries. (2022). Applying Collective Intelligence in Health Recommender Systems for Smoking Cessation: A Comparison Trial. Electronics. https://doi.org/10.3390/electronics11081219</p>
+<p>Sarah R. Skran. (2026). The effectiveness of anti-vaping health communication campaigns among high school and college students in the U.S. Frontiers in Public Health. https://doi.org/10.3389/fpubh.2025.1676181</p>
+<p>Scott D. Halpern, Benjamin French, Dylan S. Small, Kathryn A. Saulsgiver, Michael O. Harhay, Janet Audrain‐McGovern, George Loewenstein, Troyen A. Brennan, David A. Asch, &amp; Kevin G. Volpp. (2015). Randomized Trial of Four Financial-Incentive Programs for Smoking Cessation. Obstetrical &amp; Gynecological Survey. https://doi.org/10.1097/01.ogx.0000470840.40563.9a</p>
+<p>Shengyingjie Liu, Huai Yang, Min Cheng, &amp; Tianchang Miao. (2022). Family Dysfunction and Cyberchondria among Chinese Adolescents: A Moderated Mediation Model. International Journal of Environmental Research and Public Health. https://doi.org/10.3390/ijerph19159716</p>
+<p>Shuanghu Fang, &amp; Iqra Mushtaque. (2024). The Moderating Role of Health Literacy and Health Promoting Behavior in the Relationship Among Health Anxiety, Emotional Regulation, and Cyberchondria. Psychology Research and Behavior Management. https://doi.org/10.2147/prbm.s446448</p>
+<p>Simon Jones, &amp; Ryan Kelly. (2017). Dealing With Information Overload in Multifaceted Personal Informatics Systems. Human-Computer Interaction. https://doi.org/10.1080/07370024.2017.1302334</p>
+<p>Simon Manyiwa, &amp; Ross Brennan. (2012). Fear appeals in anti-smoking advertising: How important is self-efficacy?. University of Hertfordshire Research Archive (University of Hertfordshire). https://doi.org/10.1080/0267257x.2012.715092</p>
+<p>Stella Lee. (2017). The Message as a Seed: Predicting the Diffusion of Anti-Smoking Arguments from Message Construal. ScholarlyCommons (University of Pennsylvania).</p>
+<p>Stylianos Arsenakis, Anne Chatton, Louise Penzenstadler, Joël Billieux, David Berle, Vladan Starčević, Kirupamani Viswasam, &amp; Yasser Khazaal. (2021). Unveiling the relationships between cyberchondria and psychopathological symptoms. Journal of Psychiatric Research. https://doi.org/10.1016/j.jpsychires.2021.09.014</p>
+<p>Sue Ziébland, John Powell, Pam Briggs, Crispin Jenkinson, Sally Wyke, Elizabeth Sillence, Peter R. Harris, Rafael Perera, Fadhila Mazanderani, Angela Martin, Louise Locock, Laura Kelly, Margaret Booth, Bob Gann, Nicola Newhouse, &amp; Andrew Farmer. (2016). Examining the role of patients’ experiences as a resource for choice and decision-making in health care: a creative, interdisciplinary mixed-method study in digital health. Programme Grants for Applied Research. https://doi.org/10.3310/pgfar04170</p>
+<p>Susan Michie, Caroline E Wood, Marie Johnston, Charles Abraham, Jill Francis, &amp; Wendy Hardeman. (2015). Behaviour change techniques: the development and evaluation of a taxonomic method for reporting and describing behaviour change interventions (a suite of five studies involving consensus methods, randomised controlled trials and analysis of qualitative data). Health Technology Assessment. https://doi.org/10.3310/hta19990</p>
+<p>Süleyman Utku Uzun, &amp; Mehmet Zencir. (2022). CYBERCHONDRIA AND ASSOCIATED FACTORS AMONG UNIVERSITY STAFF. Eskişehir Türk Dünyası Uygulama ve Araştırma Merkezi Halk Sağlığı Dergisi. https://doi.org/10.35232/estudamhsd.1027589</p>
+<p>Tanja Staraj Bajčić, Iva Sorta-Bilajac Turina, Marko Lucijanić, Tamara Sinožić, Mirela Vučković, &amp; Ksenija Baždarić. (2024). Cyberchondria, Health Literacy, and Perception of Risk in Croatian Patients with Risk of Sexually Transmitted Infections and HIV—A Cross-Sectional Study. Epidemiologia. https://doi.org/10.3390/epidemiologia5030036</p>
+<p>Tao Zhou, &amp; Songtao Li. (2024). Understanding user switch of information seeking: From search engines to generative AI. Journal of Librarianship and Information Science. https://doi.org/10.1177/09610006241244800</p>
+<p>Tavleen Singh, Kirk Roberts, Trevor Cohen, Nathan Cobb, Amy Franklin, &amp; Sahiti Myneni. (2023). Discerning conversational context in online health communities for personalized digital behavior change solutions using Pragmatics to Reveal Intent in Social Media (PRISM) framework. Journal of Biomedical Informatics. https://doi.org/10.1016/j.jbi.2023.104324</p>
+<p>Tian Xie, Yangyang Wang, &amp; Yali Cheng. (2023). Social Media Overload as a Predictor of Depressive Symptoms Under the COVID-19 Infodemic: A Cross-Sectional Survey From Chinese University Students. International Journal of Public Health. https://doi.org/10.3389/ijph.2023.1606404</p>
+<p>Tuğba Türk Kurtça. (2025). Generalized anxiety disorder and social media addiction relationships: The role of psychological resilience, doomscrolling and cyberchondria severity. Psihologija. https://doi.org/10.2298/psi230921004t</p>
+<p>Unknown author. (1984). Stress, Appraisal, and Coping.</p>
+<p>Unknown author. (2001). Communication and Uncertainty Management. https://doi.org/10.1111/j.1460-2466.2001.tb02892.x</p>
+<p>Unknown author. (2019). The Interaction of Person-Affect-Cognition-Execution (I-PACE) model for addictive behaviors: Update, generalization to addictive behaviors beyond internet-use disorders, and specification of the process character of addictive behaviors. https://doi.org/10.1016/j.neubiorev.2019.06.032</p>
+<p>Vasundhara Sridharan, Yuichi Shoda, Jaimee L. Heffner, &amp; Jonathan B. Bricker. (2019). A Pilot Randomized Controlled Trial of a Web-Based Growth Mindset Intervention to Enhance the Effectiveness of a Smartphone App for Smoking Cessation. JMIR mhealth and uhealth. https://doi.org/10.2196/14602</p>
+<p>Viola Voncken-Brewster, Huibert Tange, Hein de Vries, Zsolt Nagykáldi, Björn Winkens, &amp; Trudy van der Weijden. (2015). A randomized controlled trial evaluating the effectiveness of a web-based, computer-tailored self-management intervention for&amp;amp;nbsp;people&amp;amp;nbsp;with or&amp;amp;nbsp;at risk for COPD. International Journal of COPD. https://doi.org/10.2147/copd.s81295</p>
+<p>Vladan Starčević, &amp; Elias Aboujaoude. (2015). Cyberchondria, cyberbullying, cybersuicide, cybersex: “new” psychopathologies for the 21st century?. World Psychiatry. https://doi.org/10.1002/wps.20195</p>
+<p>Vladan Starčević, Adriano Schimmenti, Joël Billieux, &amp; David Berle. (2020). Cyberchondria in the time of the &lt;scp&gt;COVID&lt;/scp&gt; ‐19 pandemic. Human Behavior and Emerging Technologies. https://doi.org/10.1002/hbe2.233</p>
+<p>Vladan Starčević. (2023). Keeping Dr. Google under control: how to prevent and manage cyberchondria. World Psychiatry. https://doi.org/10.1002/wps.21076</p>
+<p>Włodzimierz Oniszczenko. (2021). Anxious temperament and cyberchondria as mediated by fear of COVID-19 infection: A cross-sectional study. PLoS ONE. https://doi.org/10.1371/journal.pone.0255750</p>
+<p>Włodzimierz Oniszczenko. (2022). Age, COVID-19-related fear, insomnia symptoms and cyberchondria: a mediation model. Neuropsychiatria i Neuropsychologia. https://doi.org/10.5114/nan.2022.124695</p>
+<p>Xi Chen, Fen Lin, &amp; Edmund W. Cheng. (2021). Stratified Impacts of the Infodemic During the COVID-19 Pandemic: Cross-sectional Survey in 6 Asian Jurisdictions. Journal of Medical Internet Research. https://doi.org/10.2196/31088</p>
+<p>Xiaoqing Peng, Yang Chen, Yichuan Zhang, Fei Liu, Haiyan He, Ting Luo, Pingping Dai, Wenzhao Xie, &amp; Aijing Luo. (2021). The Status and Influencing Factors of Cyberchondria During the COVID-19 Epidemic. A Cross-Sectional Study in Nanyang City of China. Frontiers in Psychology. https://doi.org/10.3389/fpsyg.2021.712703</p>
+<p>Xinmiao Zhang, Han Zheng, Yueliang Zeng, Jiayi Zou, &amp; Zhao Lin. (2024). Exploring how health-related advertising interference contributes to the development of cyberchondria: A stressor–strain–outcome approach. Digital Health. https://doi.org/10.1177/20552076241233138</p>
+<p>Xue Wu, Nabi Nazari, &amp; Mark D. Griffiths. (2021). Using Fear and Anxiety Related to COVID-19 to Predict Cyberchondria: Cross-sectional Survey Study. Journal of Medical Internet Research. https://doi.org/10.2196/26285</p>
+<p>Xuqing Bai, Shuai-Lei Lian, Xiaojun Sun, Gengfeng Niu, &amp; J. Liu. (2025). The relationship between information hoarding and selective exposure: the role of information overload, identity bubble reinforcement, and intolerance of uncertainty. BMC Psychology. https://doi.org/10.1186/s40359-025-03062-8</p>
+<p>Yavuz Selvı, Seda Gökçe Turan, A.A. Sayin, Murat Boysan, &amp; Ali Kandeğer. (2018). The Cyberchondria Severity Scale (CSS): Validity and Reliability Study of the Turkish Version. Sleep and Hypnosis. https://doi.org/10.5350/sleep.hypn.2018.20.0157</p>
+<p>Yi Zhou, Lisha Dai, Deng Yun-long, Hongling Zeng, &amp; Lifeng Yang. (2022). The moderating effect of alexithymia on the relationship between stress and cyberchondria. Frontiers in Psychiatry. https://doi.org/10.3389/fpsyt.2022.1043521</p>
+<p>Yifang Wu, Luxi Zhang, &amp; Xinshu Zhao. (2025). Linking online health information seeking to cancer information overload among Chinese cancer patients’ family members. Digital Health. https://doi.org/10.1177/20552076251336308</p>
+<p>Yu Guo, Yuxuan Wang, &amp; Yiwei Li. (2024). Online Health Information Seeking and Cyberchondria Among Men at Risk of HIV Infection: A Moderated Mediation Model. PubMed Central. https://doi.org/10.1080/19317611.2024.2444590</p>
+<p>Yu Guo, Yuxuan Wang, &amp; Yiwei Li. (2024). Online health information seeking, health anxiety and cyberchondria among men who engage in sexual risk taking: The mediating role of medical consultation about &lt;scp&gt;HIV&lt;/scp&gt; / &lt;scp&gt;AIDS&lt;/scp&gt;. Journal of Community &amp; Applied Social Psychology. https://doi.org/10.1002/casp.2845</p>
+<p>Yusuff Adebayo Adebisi. (2026). Socioeconomic Disparities in E-Cigarette Use: Patterns, Mechanisms, and Equity Implications. Current Addiction Reports. https://doi.org/10.1007/s40429-026-00716-4</p>
+<p>Z C Jiang, Gaohui Cao, Reima Suomi, &amp; Daolin Zha. (2024). Health anxiety and related factors among the rural population: A cross-sectional study in China. Journal of Health Psychology. https://doi.org/10.1177/13591053241301201</p>
+<p>Zeynep Gizem Ergün Özdel, Güven Özkaya, &amp; Şenay Türe. (2025). Parental health information seeking online: How cyberchondria and health literacy shape pediatric health decisions. Archivos Argentinos de Pediatria. https://doi.org/10.5546/aap.2025-10771.eng</p>
+<p>Özlem Üzüm, Gülberat Ince, Kayı Eliaçık, Ali Kanık, Ferhan Elmali, &amp; Mehmet Helvacı. (2023). Investigating the Potential Connection Between Cyberchondria and Vaccine Hesitancy in High School Students. Cureus. https://doi.org/10.7759/cureus.34218</p>
+<p>А.А. Золотарева. (2022). Cyberchondria, but not preventive behavior, mediates the relationship between fear of COVID-19 and somatic burden: Evidence from Russia. Frontiers in Psychiatry. https://doi.org/10.3389/fpsyt.2022.1018659</p>
+          </div>
+</article>
+      </details>
+    </section>
+    <div class="footer">CQ Skill · JWC💗XQ@Rednote drharry · UTF-8</div>
+  </main>
+</div>
+<script>
+  const zh=document.getElementById('zhBtn'),en=document.getElementById('enBtn');
+  function language(name){document.body.classList.toggle('en',name==='en');document.documentElement.lang=name==='en'?'en':'zh-CN';zh.classList.toggle('active',name==='zh');en.classList.toggle('active',name==='en');localStorage.setItem('cq-manual-language',name)}
+  zh.onclick=()=>language('zh');en.onclick=()=>language('en');language(localStorage.getItem('cq-manual-language')==='en'?'en':'zh');
+  document.querySelectorAll('.copy').forEach(button=>button.onclick=async()=>{const value=button.parentElement.querySelector('code').innerText;try{await navigator.clipboard.writeText(value);button.textContent='已复制 / Copied'}catch(e){const area=document.createElement('textarea');area.value=value;document.body.appendChild(area);area.select();document.execCommand('copy');area.remove();button.textContent='已复制 / Copied'}setTimeout(()=>button.textContent='复制 / Copy',1400)});
+</script>
+</body>
+</html>

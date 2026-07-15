@@ -1,0 +1,35 @@
+{
+  "livestream-commerce": {
+    "schema_version": 1,
+    "status": "draft-not-approved",
+    "approved": false,
+    "topic_label": "Legacy migration example: livestream commerce information overload",
+    "core_groups": [
+      {"id": "G01", "label": "直播电商情境", "terms": ["livestream commerce", "live shopping", "直播电商", "直播购物"], "required": true},
+      {"id": "G02", "label": "消费者决策或信息超载", "terms": ["information overload", "purchase decision", "impulse buying", "信息超载", "购买决策", "冲动购买"], "required": true}
+    ],
+    "minimum_core_groups": 2,
+    "adjacent_terms": ["social commerce", "社交商务"],
+    "mechanism_terms": ["cognitive load", "decision fatigue", "认知负荷", "决策疲劳"],
+    "exclusion_terms": ["clinical", "patient", "医疗", "患者"],
+    "direct_query_ids": [], "theory_query_ids": [], "match_fields": ["title", "abstract", "keywords"],
+    "unmatched_action": "needs-review", "low_confidence_policy": "needs-review",
+    "notes": "仅用于显式迁移旧任务；必须按当前研究问题审阅、修改并重新确认。"
+  },
+  "larp": {
+    "schema_version": 1,
+    "status": "draft-not-approved",
+    "approved": false,
+    "topic_label": "Legacy migration example: live-action role-playing",
+    "core_groups": [
+      {"id": "G01", "label": "LARP直接语境", "terms": ["live action role-playing", "live-action role-play", "LARP", "实景角色扮演"], "required": true}
+    ],
+    "minimum_core_groups": 1,
+    "adjacent_terms": ["historical reenactment", "immersive theatre", "living history", "历史重演", "沉浸式戏剧"],
+    "mechanism_terms": ["identity", "immersion", "community", "身份", "沉浸", "社群"],
+    "exclusion_terms": ["liver alkaline", "leukocyte alkaline"],
+    "direct_query_ids": [], "theory_query_ids": [], "match_fields": ["title", "abstract", "keywords"],
+    "unmatched_action": "needs-review", "low_confidence_policy": "needs-review",
+    "notes": "仅用于显式迁移旧任务；必须按当前研究问题审阅、修改并重新确认。"
+  }
+}

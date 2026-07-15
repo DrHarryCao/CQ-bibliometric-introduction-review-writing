@@ -1,0 +1,20 @@
+{
+  "schema_version": 2,
+  "small_corpus_max": 100,
+  "small_corpus_citation_ratio": 0.6,
+  "large_corpus_legacy_floor": 40,
+  "large_corpus_sqrt_multiplier": 5,
+  "large_corpus_enhanced_ratio": 0.6,
+  "large_corpus_cap": 120,
+  "small_topic_ratio": 0.4,
+  "minimum_topic_citations": 3,
+  "strong_claim_minimum_independent_studies": 3,
+  "source_hierarchy": {
+    "default_discipline_profile": "general-social-science",
+    "conference_primary": false,
+    "tier_order": ["A", "B", "C", "D"],
+    "tier_d_formal_claims": false,
+    "strong_claim_requires_tier_a": true,
+    "lower_tier_allowed_roles": ["unique-context", "counterevidence", "emerging", "quota-shortfall"]
+  }
+}

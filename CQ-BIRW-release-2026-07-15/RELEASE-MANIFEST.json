@@ -1,0 +1,89 @@
+{
+  "release_name": "CQ-BIRW-release-2026-07-15",
+  "release_date": "2026-07-15",
+  "encoding": "UTF-8",
+  "skill_name": "cq-bibliometric-introduction-review-writing",
+  "skill_schema_version": 12,
+  "brand": "JWC💗XQ@Rednote drharry",
+  "source_policy": "read-only-copy",
+  "source_runtime_content_hash_sha256": "aad278545f46f44575c743401de0d32ab5c6da33d1980e9b24b82586215186bb",
+  "included_skill_roots": [
+    "SKILL.md",
+    "agents",
+    "assets",
+    "references",
+    "scripts"
+  ],
+  "excluded": [
+    "review-tasks",
+    "tests",
+    ".pytest_cache",
+    "__pycache__",
+    "*.pyc",
+    ".DS_Store",
+    "logs",
+    "temporary files",
+    "credentials",
+    "user task data",
+    "standalone demo source files"
+  ],
+  "documentation": {
+    "version": "2026-07-15",
+    "languages": ["zh-CN", "en"],
+    "layout": "complete-Chinese-section-plus-complete-English-section",
+    "shared_sections": 17,
+    "fact_manifest_equal": true,
+    "official_links_equal": true,
+    "offline_html": true,
+    "single_file_html": true,
+    "external_cdn": false,
+    "embedded_demos": [
+      {
+        "id": "introduction-publication-draft",
+        "status": "unvalidated-draft-preview",
+        "body_paragraphs": 11,
+        "headings": 1,
+        "references": 146,
+        "source_file_sha256": "eb64ad2ba63e39f866a9ed49ce1f6254cdef83b061f576f31e00cf10abd678df"
+      },
+      {
+        "id": "review-evidence-aware-draft",
+        "status": "unvalidated-draft-preview",
+        "body_paragraphs": 51,
+        "headings": 13,
+        "references": 177,
+        "source_file_sha256": "a398a88063c9e501ff70b65217b009d768e4b512d6d454cf08956a80c2693650"
+      }
+    ]
+  },
+  "verification": {
+    "offline_tests": {
+      "collected": 100,
+      "passed": 100,
+      "failed": 0,
+      "warnings": 5,
+      "warning_scope": "PyMuPDF SWIG deprecation warnings only"
+    },
+    "demo_text_matches_sources": true,
+    "demo_scripts_and_handlers_removed": true,
+    "html_id_and_anchor_check": "passed",
+    "javascript_syntax_check": "passed",
+    "bilingual_coverage_check": "passed",
+    "quick_validate": "passed",
+    "cli_help": "passed",
+    "doctor": "passed-with-optional-degradation",
+    "doctor_optional_degradation": ["Tesseract unavailable", "jieba unavailable", "xlrd unavailable"],
+    "codex_managed_copy_smoke_test": "passed",
+    "claude_managed_copy_smoke_test": "passed",
+    "secret_values_exposed": false,
+    "original_skill_runtime_modified": false
+  },
+  "supported_platforms": {
+    "macos": "13+",
+    "windows": "10/11",
+    "linux": ["Ubuntu 22.04/24.04", "Debian 12", "Fedora current stable"],
+    "architectures": ["x64", "ARM64", "Intel", "Apple Silicon"],
+    "python": "3.10-3.13"
+  },
+  "checksum_note": "SHA256SUMS.txt covers every payload file except SHA256SUMS.txt itself."
+}
