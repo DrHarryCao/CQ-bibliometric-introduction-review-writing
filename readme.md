@@ -603,7 +603,7 @@ The complete manuscripts are not duplicated in the README. Open the [single-file
 
 ---
 
-## 官方链接与版本说明 / Official links and version notes
+## 配件官方链接与版本说明--Plugin setup official-links-and-version-notes
 
 - [OpenAlex API 设置 / API settings](https://openalex.org/settings/api)
 - [OpenAlex 用量 / Usage](https://openalex.org/settings/usage)
